@@ -10,7 +10,9 @@
         "options": ["kilogram (kg)", "meter (m)", "second (s)", "degree Celsius (°C)"],
         "correctIndex": 1,
         "explanation": "The meter (m) is the SI unit of length.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["misure", "lunghezza"]
       },
       {
         "id": "w1-f-2",
@@ -19,7 +21,9 @@
         "options": ["Thermometer", "Clock", "Kitchen scale", "Ruler"],
         "correctIndex": 2,
         "explanation": "A kitchen scale measures mass in grams or kilograms.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["strumenti", "massa"]
       },
       {
         "id": "w1-f-3",
@@ -27,7 +31,9 @@
         "question": "Time is measured in seconds (s).",
         "correctAnswer": true,
         "explanation": "Seconds are the base unit for measuring time.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["tempo", "unita-base"]
       },
       {
         "id": "w1-f-4",
@@ -35,7 +41,9 @@
         "question": "Name the basic unit used to measure temperature in everyday life in Italy.",
         "correctAnswer": "celsius",
         "explanation": "We commonly measure temperature in degrees Celsius (°C).",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["temperatura", "scala"]
       },
       {
         "id": "w1-f-5",
@@ -44,7 +52,9 @@
         "options": ["Energies", "Materials", "Physical quantities", "Forces"],
         "correctIndex": 2,
         "explanation": "These are basic physical quantities that describe the world.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["quantita-fisiche", "concetti-base"]
       }
     ]
   },
@@ -58,7 +68,9 @@
         "question": "Matter is anything that has mass and takes up space.",
         "correctAnswer": true,
         "explanation": "Objects, liquids, and gases all have mass and volume.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["materia", "massa", "volume"]
       },
       {
         "id": "w1-c-2",
@@ -67,7 +79,9 @@
         "options": ["Air", "Light", "Water", "A wooden spoon"],
         "correctIndex": 1,
         "explanation": "Light is energy, not matter.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["materia", "energia"]
       },
       {
         "id": "w1-c-3",
@@ -75,7 +89,9 @@
         "question": "What tiny building blocks make up all matter?",
         "correctAnswer": "particles",
         "explanation": "All matter is made of very small particles (atoms and molecules).",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["particelle", "struttura"]
       },
       {
         "id": "w1-c-4",
@@ -84,7 +100,9 @@
         "options": ["Brick, milk, oxygen", "Water, juice, soda", "Smoke, fog, mist", "Sand, stone, metal"],
         "correctIndex": 0,
         "explanation": "Brick is solid, milk is liquid, oxygen is gas.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["stati", "materia"]
       },
       {
         "id": "w1-c-5",
@@ -92,7 +110,9 @@
         "question": "Energy and matter are exactly the same thing.",
         "correctAnswer": false,
         "explanation": "Matter has mass and volume; energy is the ability to do work or cause change.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["energia", "materia"]
       }
     ]
   },
@@ -107,7 +127,9 @@
         "options": ["Glass", "Steel", "Plastic", "Ceramic"],
         "correctIndex": 2,
         "explanation": "Plastic bottles are common because plastic is light and cheap.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["materiali", "densita"]
       },
       {
         "id": "w1-t-2",
@@ -115,7 +137,9 @@
         "question": "Wood is a natural material.",
         "correctAnswer": true,
         "explanation": "Wood comes directly from trees.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["materiali", "naturale"]
       },
       {
         "id": "w1-t-3",
@@ -124,7 +148,9 @@
         "options": ["Copper", "Glass", "Plastic", "Wood"],
         "correctIndex": 0,
         "explanation": "Copper is a good electrical conductor.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["conduzione", "materiali"]
       },
       {
         "id": "w1-t-4",
@@ -132,7 +158,9 @@
         "question": "Name one hard material often used for windows.",
         "correctAnswer": "glass",
         "explanation": "Glass is hard and transparent, so it is used for windows.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["materiali", "vetro"]
       },
       {
         "id": "w1-t-5",
@@ -140,7 +168,9 @@
         "question": "Plastic and metal feel the same temperature when you touch them.",
         "correctAnswer": false,
         "explanation": "Metal conducts heat better, so it often feels colder or hotter than plastic.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["temperatura", "conduzione"]
       }
     ]
   },
@@ -155,7 +185,9 @@
         "options": ["Stopwatch", "Thermometer", "Balance", "Ruler"],
         "correctIndex": 1,
         "explanation": "A thermometer measures temperature in degrees Celsius.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["temperatura", "strumenti"]
       },
       {
         "id": "w2-f-2",
@@ -163,7 +195,9 @@
         "question": "Repeating a measurement helps you see possible errors.",
         "correctAnswer": true,
         "explanation": "Taking several measurements shows if your values are consistent.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["errori", "misure"]
       },
       {
         "id": "w2-f-3",
@@ -171,7 +205,9 @@
         "question": "Which instrument measures mass?",
         "correctAnswer": "balance",
         "explanation": "A balance or scale measures mass.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["massa", "strumenti"]
       },
       {
         "id": "w2-f-4",
@@ -180,7 +216,9 @@
         "options": ["1 centimeter", "1 millimeter", "5 millimeters", "1 meter"],
         "correctIndex": 1,
         "explanation": "The smallest division is 1 mm when marks are that close.",
-        "level": "easy"
+        "difficulty": "hard",
+        "weight": 3,
+        "tags": ["precisione", "strumenti"]
       }
     ]
   },
@@ -195,7 +233,9 @@
         "options": ["Solid to gas", "Gas to liquid", "Solid to liquid", "Liquid to solid"],
         "correctIndex": 2,
         "explanation": "Melting is the change from solid to liquid.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["cambiamenti", "stati"]
       },
       {
         "id": "w2-c-2",
@@ -203,7 +243,9 @@
         "question": "Evaporation is when a liquid turns into a gas.",
         "correctAnswer": true,
         "explanation": "Heating water can make it evaporate into water vapor.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["evaporazione", "stati"]
       },
       {
         "id": "w2-c-3",
@@ -211,7 +253,9 @@
         "question": "Name the state of matter of water vapor.",
         "correctAnswer": "gas",
         "explanation": "Water vapor is water in the gas state.",
-        "level": "easy"
+        "difficulty": "easy",
+        "weight": 1,
+        "tags": ["stati", "gas"]
       },
       {
         "id": "w2-c-4",
@@ -220,7 +264,9 @@
         "options": ["Gas turns to liquid", "Liquid turns to solid", "Solid turns to gas", "Liquid turns to gas"],
         "correctIndex": 0,
         "explanation": "Condensation is when a gas cools and becomes liquid.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["condensazione", "stati"]
       }
     ]
   },
@@ -234,7 +280,9 @@
         "question": "Glass is usually more fragile than wood.",
         "correctAnswer": true,
         "explanation": "Glass breaks more easily when hit compared to wood.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["fragilita", "materiali"]
       },
       {
         "id": "w2-t-2",
@@ -243,7 +291,9 @@
         "options": ["Plastic", "Wood", "Copper", "Rubber"],
         "correctIndex": 2,
         "explanation": "Metals like copper conduct heat well.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["conduzione-termica", "materiali"]
       },
       {
         "id": "w2-t-3",
@@ -251,7 +301,9 @@
         "question": "If a material returns to its shape after bending, which property is it showing?",
         "correctAnswer": "elasticity",
         "explanation": "Elasticity means the material can flex and then return to its original shape.",
-        "level": "easy"
+        "difficulty": "hard",
+        "weight": 3,
+        "tags": ["elasticita", "proprieta"]
       },
       {
         "id": "w2-t-4",
@@ -259,7 +311,9 @@
         "question": "A brittle material breaks easily without bending much.",
         "correctAnswer": true,
         "explanation": "Fragility or brittleness means little deformation before breaking.",
-        "level": "easy"
+        "difficulty": "medium",
+        "weight": 2,
+        "tags": ["fragilita", "proprieta"]
       }
     ]
   }
