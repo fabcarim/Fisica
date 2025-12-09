@@ -287,19 +287,19 @@ function renderWeekDetail(week) {
     subjectRow.appendChild(btn);
   });
   practice.appendChild(subjectRow);
-  const quizArea = document.createElement('div');
-  quizArea.id = 'quiz-area';
-  quizArea.innerHTML = '<p>Seleziona una materia per iniziare le domande.</p>';
-  practice.appendChild(quizArea);
+  const hint = document.createElement('p');
+  hint.className = 'muted';
+  hint.textContent = 'Le domande appariranno nello stage in alto per tenere sempre la focus area visibile.';
+  practice.appendChild(hint);
   container.appendChild(practice);
 }
 
 function startPractice(week, subject) {
-  const quizArea = document.getElementById('quiz-area');
-  if (!quizArea) return;
+  const questionStage = document.getElementById('question-stage');
+  if (!questionStage) return;
   const group = getQuestionGroup(week.id, subject);
   if (!group || !group.questions?.length) {
-    quizArea.innerHTML = `<p>Nessuna domanda disponibile per ${subject}.</p>`;
+    questionStage.innerHTML = `<p>Nessuna domanda disponibile per ${subject}.</p>`;
     return;
   }
   currentPractice = {
@@ -308,7 +308,7 @@ function startPractice(week, subject) {
     pool: group.questions,
     currentQuestion: null,
   };
-  quizArea.innerHTML = '<div class="spinner">Caricamento domanda...</div>';
+  questionStage.innerHTML = '<div class="spinner">Caricamento domanda...</div>';
   setTimeout(() => {
     const next = selectQuestion(group.questions, subject);
     renderQuestion(next);
@@ -342,7 +342,7 @@ function selectQuestion(questions, subject) {
 
 function renderQuestion(question) {
   currentPractice.currentQuestion = question;
-  const quizArea = document.getElementById('quiz-area');
+  const quizArea = document.getElementById('question-stage');
   if (!quizArea) return;
   if (!question) {
     quizArea.innerHTML = '<p>Nessuna domanda trovata.</p>';
