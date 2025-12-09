@@ -97,3 +97,80 @@ body {
   color: #e5e7eb;
   font-size: 0.8rem;
 }
+
+.practice-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.practice-btn {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #2563eb;
+  background: #e0e7ff;
+  cursor: pointer;
+}
+
+.question-block {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.question-header p {
+  margin: 0.2rem 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.35rem;
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.answer-area {
+  margin: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.option {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.answer-area input[type='text'] {
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+.question-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.question-controls button {
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #9ca3af;
+  background: #f3f4f6;
+  cursor: pointer;
+}
+
+.feedback {
+  min-height: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.error {
+  color: #b91c1c;
+}
