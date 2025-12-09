@@ -1,0 +1,266 @@
+[
+  {
+    "weekId": "w1",
+    "subject": "Fisica",
+    "questions": [
+      {
+        "id": "w1-f-1",
+        "type": "mcq",
+        "question": "Which of the following is a unit of length?",
+        "options": ["kilogram (kg)", "meter (m)", "second (s)", "degree Celsius (°C)"],
+        "correctIndex": 1,
+        "explanation": "The meter (m) is the SI unit of length.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-f-2",
+        "type": "mcq",
+        "question": "Which tool do you use to measure mass at home?",
+        "options": ["Thermometer", "Clock", "Kitchen scale", "Ruler"],
+        "correctIndex": 2,
+        "explanation": "A kitchen scale measures mass in grams or kilograms.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-f-3",
+        "type": "truefalse",
+        "question": "Time is measured in seconds (s).",
+        "correctAnswer": true,
+        "explanation": "Seconds are the base unit for measuring time.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-f-4",
+        "type": "open",
+        "question": "Name the basic unit used to measure temperature in everyday life in Italy.",
+        "correctAnswer": "celsius",
+        "explanation": "We commonly measure temperature in degrees Celsius (°C).",
+        "level": "easy"
+      },
+      {
+        "id": "w1-f-5",
+        "type": "mcq",
+        "question": "What do we call quantities like length, mass, time, and temperature?",
+        "options": ["Energies", "Materials", "Physical quantities", "Forces"],
+        "correctIndex": 2,
+        "explanation": "These are basic physical quantities that describe the world.",
+        "level": "easy"
+      }
+    ]
+  },
+  {
+    "weekId": "w1",
+    "subject": "Chimica",
+    "questions": [
+      {
+        "id": "w1-c-1",
+        "type": "truefalse",
+        "question": "Matter is anything that has mass and takes up space.",
+        "correctAnswer": true,
+        "explanation": "Objects, liquids, and gases all have mass and volume.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-c-2",
+        "type": "mcq",
+        "question": "Which of these is NOT made of matter?",
+        "options": ["Air", "Light", "Water", "A wooden spoon"],
+        "correctIndex": 1,
+        "explanation": "Light is energy, not matter.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-c-3",
+        "type": "open",
+        "question": "What tiny building blocks make up all matter?",
+        "correctAnswer": "particles",
+        "explanation": "All matter is made of very small particles (atoms and molecules).",
+        "level": "easy"
+      },
+      {
+        "id": "w1-c-4",
+        "type": "mcq",
+        "question": "Which list shows a solid, a liquid, and a gas?",
+        "options": ["Brick, milk, oxygen", "Water, juice, soda", "Smoke, fog, mist", "Sand, stone, metal"],
+        "correctIndex": 0,
+        "explanation": "Brick is solid, milk is liquid, oxygen is gas.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-c-5",
+        "type": "truefalse",
+        "question": "Energy and matter are exactly the same thing.",
+        "correctAnswer": false,
+        "explanation": "Matter has mass and volume; energy is the ability to do work or cause change.",
+        "level": "easy"
+      }
+    ]
+  },
+  {
+    "weekId": "w1",
+    "subject": "Tecnica",
+    "questions": [
+      {
+        "id": "w1-t-1",
+        "type": "mcq",
+        "question": "Which material is usually the lightest for a water bottle?",
+        "options": ["Glass", "Steel", "Plastic", "Ceramic"],
+        "correctIndex": 2,
+        "explanation": "Plastic bottles are common because plastic is light and cheap.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-t-2",
+        "type": "truefalse",
+        "question": "Wood is a natural material.",
+        "correctAnswer": true,
+        "explanation": "Wood comes directly from trees.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-t-3",
+        "type": "mcq",
+        "question": "Which material is usually best for electrical wires?",
+        "options": ["Copper", "Glass", "Plastic", "Wood"],
+        "correctIndex": 0,
+        "explanation": "Copper is a good electrical conductor.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-t-4",
+        "type": "open",
+        "question": "Name one hard material often used for windows.",
+        "correctAnswer": "glass",
+        "explanation": "Glass is hard and transparent, so it is used for windows.",
+        "level": "easy"
+      },
+      {
+        "id": "w1-t-5",
+        "type": "truefalse",
+        "question": "Plastic and metal feel the same temperature when you touch them.",
+        "correctAnswer": false,
+        "explanation": "Metal conducts heat better, so it often feels colder or hotter than plastic.",
+        "level": "easy"
+      }
+    ]
+  },
+  {
+    "weekId": "w2",
+    "subject": "Fisica",
+    "questions": [
+      {
+        "id": "w2-f-1",
+        "type": "mcq",
+        "question": "Which instrument do you use to measure temperature?",
+        "options": ["Stopwatch", "Thermometer", "Balance", "Ruler"],
+        "correctIndex": 1,
+        "explanation": "A thermometer measures temperature in degrees Celsius.",
+        "level": "easy"
+      },
+      {
+        "id": "w2-f-2",
+        "type": "truefalse",
+        "question": "Repeating a measurement helps you see possible errors.",
+        "correctAnswer": true,
+        "explanation": "Taking several measurements shows if your values are consistent.",
+        "level": "easy"
+      },
+      {
+        "id": "w2-f-3",
+        "type": "open",
+        "question": "Which instrument measures mass?",
+        "correctAnswer": "balance",
+        "explanation": "A balance or scale measures mass.",
+        "level": "easy"
+      },
+      {
+        "id": "w2-f-4",
+        "type": "mcq",
+        "question": "If a ruler has marks every millimeter, what is the smallest division you can read?",
+        "options": ["1 centimeter", "1 millimeter", "5 millimeters", "1 meter"],
+        "correctIndex": 1,
+        "explanation": "The smallest division is 1 mm when marks are that close.",
+        "level": "easy"
+      }
+    ]
+  },
+  {
+    "weekId": "w2",
+    "subject": "Chimica",
+    "questions": [
+      {
+        "id": "w2-c-1",
+        "type": "mcq",
+        "question": "What happens when ice melts?",
+        "options": ["Solid to gas", "Gas to liquid", "Solid to liquid", "Liquid to solid"],
+        "correctIndex": 2,
+        "explanation": "Melting is the change from solid to liquid.",
+        "level": "easy"
+      },
+      {
+        "id": "w2-c-2",
+        "type": "truefalse",
+        "question": "Evaporation is when a liquid turns into a gas.",
+        "correctAnswer": true,
+        "explanation": "Heating water can make it evaporate into water vapor.",
+        "level": "easy"
+      },
+      {
+        "id": "w2-c-3",
+        "type": "open",
+        "question": "Name the state of matter of water vapor.",
+        "correctAnswer": "gas",
+        "explanation": "Water vapor is water in the gas state.",
+        "level": "easy"
+      },
+      {
+        "id": "w2-c-4",
+        "type": "mcq",
+        "question": "Condensation happens when:",
+        "options": ["Gas turns to liquid", "Liquid turns to solid", "Solid turns to gas", "Liquid turns to gas"],
+        "correctIndex": 0,
+        "explanation": "Condensation is when a gas cools and becomes liquid.",
+        "level": "easy"
+      }
+    ]
+  },
+  {
+    "weekId": "w2",
+    "subject": "Tecnica",
+    "questions": [
+      {
+        "id": "w2-t-1",
+        "type": "truefalse",
+        "question": "Glass is usually more fragile than wood.",
+        "correctAnswer": true,
+        "explanation": "Glass breaks more easily when hit compared to wood.",
+        "level": "easy"
+      },
+      {
+        "id": "w2-t-2",
+        "type": "mcq",
+        "question": "Which material is a good thermal conductor?",
+        "options": ["Plastic", "Wood", "Copper", "Rubber"],
+        "correctIndex": 2,
+        "explanation": "Metals like copper conduct heat well.",
+        "level": "easy"
+      },
+      {
+        "id": "w2-t-3",
+        "type": "open",
+        "question": "If a material returns to its shape after bending, which property is it showing?",
+        "correctAnswer": "elasticity",
+        "explanation": "Elasticity means the material can flex and then return to its original shape.",
+        "level": "easy"
+      },
+      {
+        "id": "w2-t-4",
+        "type": "truefalse",
+        "question": "A brittle material breaks easily without bending much.",
+        "correctAnswer": true,
+        "explanation": "Fragility or brittleness means little deformation before breaking.",
+        "level": "easy"
+      }
+    ]
+  }
+]
