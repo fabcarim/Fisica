@@ -37,6 +37,79 @@ body {
   background: #f9fafb;
 }
 
+#gamification-panel {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+  border: 1px solid #c7d2fe;
+}
+
+#gamification-panel h3 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+}
+
+.xp-progress {
+  margin-bottom: 0.35rem;
+}
+
+.xp-bar {
+  width: 100%;
+  background: #e5e7eb;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#xp-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.xp-note {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+.badge-line,
+.streak-line {
+  margin: 0.3rem 0;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.leaderboard {
+  margin-top: 0.35rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+}
+
+.leaderboard-header {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 70px;
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+  align-items: center;
+}
+
+.leaderboard-row.me {
+  background: #fef3c7;
+  border-radius: 6px;
+  padding-left: 0.4rem;
+}
+
 .week-card {
   border: 1px solid #ddd;
   padding: 0.5rem 0.75rem;
@@ -62,6 +135,15 @@ body {
 
 .section-block h3 {
   margin-top: 0;
+}
+
+.section-block ul {
+  margin: 0.25rem 0 0.4rem;
+  padding-left: 1.25rem;
+}
+
+.section-block li {
+  margin: 0.1rem 0;
 }
 
 .progress-check {
@@ -173,4 +255,39 @@ body {
 
 .error {
   color: #b91c1c;
+}
+
+.mini-missions {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.missions-head {
+  margin-bottom: 0.35rem;
+}
+
+.missions-head p {
+  margin: 0.1rem 0 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.mission-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.35rem;
+}
+
+.mission-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.45rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
 }

@@ -1,8 +1,10 @@
-// main.js - logica della webapp Mia Science Quest V1.0
+// main.js - logica della webapp Mia Science Quest V1.1
 
 let weeksData = [];
 let questionsData = [];
 let quizProgress = {};
+let streakData = {};
+let missionProgress = {};
 let currentPractice = {
   weekId: null,
   subject: null,
@@ -59,6 +61,125 @@ function saveQuizProgress(progress) {
   }
 }
 
+function loadStreak() {
+  try {
+    const saved = localStorage.getItem('mia-science-streak');
+    return saved ? JSON.parse(saved) : { count: 0, lastDate: null };
+  } catch (error) {
+    console.error('Errore nel caricamento della streak:', error);
+    return { count: 0, lastDate: null };
+  }
+}
+
+function saveStreak(data) {
+  try {
+    localStorage.setItem('mia-science-streak', JSON.stringify(data));
+  } catch (error) {
+    console.error('Errore nel salvataggio della streak:', error);
+  }
+}
+
+function loadMissionProgress() {
+  try {
+    const saved = localStorage.getItem('mia-science-missions');
+    return saved ? JSON.parse(saved) : {};
+  } catch (error) {
+    console.error('Errore nel caricamento delle missioni:', error);
+    return {};
+  }
+}
+
+function saveMissionProgress(progress) {
+  try {
+    localStorage.setItem('mia-science-missions', JSON.stringify(progress));
+  } catch (error) {
+    console.error('Errore nel salvataggio delle missioni:', error);
+  }
+}
+
+function getBadgeForXP(xp) {
+  if (xp >= 300) return 'Lab Hero';
+  if (xp >= 180) return 'Experiment Pro';
+  if (xp >= 120) return 'Junior Scientist';
+  if (xp >= 50) return 'Starter';
+  return 'New Explorer';
+}
+
+function ensureGamificationPanel() {
+  const sidebar = document.querySelector('.sidebar');
+  if (!sidebar) return;
+  let panel = document.getElementById('gamification-panel');
+  if (!panel) {
+    panel = document.createElement('div');
+    panel.id = 'gamification-panel';
+    panel.innerHTML = `
+      <h3>Ricompense V1.1</h3>
+      <div class="xp-progress">
+        <div class="xp-bar"><span id="xp-fill"></span></div>
+        <p class="xp-note">XP verso il livello successivo</p>
+      </div>
+      <div class="badge-line">Badge: <span id="badge-display">-</span></div>
+      <div class="streak-line" id="streak-display">Streak: 0 giorni</div>
+      <div class="leaderboard">
+        <div class="leaderboard-header">Classifica amichevole</div>
+        <div id="leaderboard-list"></div>
+      </div>
+    `;
+    sidebar.appendChild(panel);
+  }
+}
+
+function getLeaderboardData(userXP) {
+  const rivals = [
+    { name: 'Luca', xp: 210 },
+    { name: 'Giulia', xp: 140 },
+    { name: 'Sofia', xp: 85 },
+    { name: 'Ali', xp: 60 },
+  ];
+  const combined = [...rivals, { name: 'Tu', xp: userXP }];
+  return combined.sort((a, b) => b.xp - a.xp).map((player, index) => ({ ...player, rank: index + 1 }));
+}
+
+function renderLeaderboard(userXP) {
+  const list = document.getElementById('leaderboard-list');
+  if (!list) return;
+  const leaderboard = getLeaderboardData(userXP);
+  list.innerHTML = '';
+  leaderboard.forEach((entry) => {
+    const row = document.createElement('div');
+    row.className = 'leaderboard-row' + (entry.name === 'Tu' ? ' me' : '');
+    row.innerHTML = `<span>#${entry.rank}</span><span class="name">${entry.name}</span><span class="xp">${entry.xp} XP</span>`;
+    list.appendChild(row);
+  });
+}
+
+function updateStreakOnCorrect() {
+  const today = new Date();
+  const todayKey = today.toISOString().slice(0, 10);
+  const lastDate = streakData.lastDate;
+  if (lastDate === todayKey) {
+    return streakData.count;
+  }
+
+  if (lastDate) {
+    const diff = Math.floor((today - new Date(lastDate)) / (1000 * 60 * 60 * 24));
+    streakData.count = diff === 1 ? streakData.count + 1 : 1;
+  } else {
+    streakData.count = 1;
+  }
+
+  streakData.lastDate = todayKey;
+  saveStreak(streakData);
+  return streakData.count;
+}
+
+function renderStreak() {
+  const streakEl = document.getElementById('streak-display');
+  if (streakEl) {
+    streakEl.textContent = `Streak: ${streakData.count} ${streakData.count === 1 ? 'giorno' : 'giorni'}`;
+  }
+}
+
 function updateXPFromProgress(progress) {
   const xpDisplay = document.getElementById('xp-display');
   const levelDisplay = document.getElementById('level-display');
@@ -68,6 +189,19 @@ function updateXPFromProgress(progress) {
 
   if (xpDisplay) xpDisplay.textContent = `XP: ${xp}`;
   if (levelDisplay) levelDisplay.textContent = `Livello: ${level}`;
+
+  const badgeDisplay = document.getElementById('badge-display');
+  if (badgeDisplay) badgeDisplay.textContent = getBadgeForXP(xp);
+
+  const xpFill = document.getElementById('xp-fill');
+  if (xpFill) {
+    const percent = Math.min(100, Math.round(((xp % 50) / 50) * 100));
+    xpFill.style.width = `${percent}%`;
+    xpFill.title = `${percent}% del livello ${level}`;
+  }
+
+  renderStreak();
+  renderLeaderboard(xp);
 }
 
 function renderWeekList(weeks) {
@@ -116,6 +250,44 @@ function renderWeekDetail(week) {
     <p><strong>Mese:</strong> ${week.month}</p>
   `;
   container.appendChild(header);
+
+  const missions = document.createElement('div');
+  missions.className = 'mini-missions';
+  missions.innerHTML = `
+    <div class="missions-head">
+      <h3>Missioni rapide</h3>
+      <p>Scegli l'ordine che preferisci: ogni spunta vale motivazione extra.</p>
+    </div>
+  `;
+  const missionList = document.createElement('div');
+  missionList.className = 'mission-list';
+  const quickTasks = [
+    'Ripeti le unità di misura base e verifica due esempi reali.',
+    'Completa almeno 2 domande per ogni materia della settimana.',
+    "Rispondi a una domanda aperta scrivendo il perché dell'errore se sbagli.",
+    'Condividi un trucco di memoria (mnemonico) per ricordare un concetto.',
+  ];
+  quickTasks.forEach((task, idx) => {
+    const item = document.createElement('label');
+    item.className = 'mission-item';
+    const missionKey = `${week.id}-${idx}`;
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.dataset.mission = missionKey;
+    checkbox.checked = !!missionProgress[missionKey];
+    checkbox.addEventListener('change', () => {
+      missionProgress[missionKey] = checkbox.checked;
+      saveMissionProgress(missionProgress);
+    });
+
+    const text = document.createElement('span');
+    text.textContent = task;
+    item.appendChild(checkbox);
+    item.appendChild(text);
+    missionList.appendChild(item);
+  });
+  missions.appendChild(missionList);
+  container.appendChild(missions);
 
   const overview = document.createElement('div');
   overview.innerHTML = '<h3>Panoramica</h3>';
@@ -323,6 +495,14 @@ function handleCheckAnswer(question, feedbackEl, controlsEl) {
       quizProgress[question.id] = { correct: true };
       saveQuizProgress(quizProgress);
       updateXPFromProgress(quizProgress);
+      const streakCount = updateStreakOnCorrect();
+      renderStreak();
+      const xpGain = document.createElement('p');
+      xpGain.textContent = '+5 XP guadagnati!';
+      feedbackEl.appendChild(xpGain);
+      const streakMsg = document.createElement('p');
+      streakMsg.textContent = `Streak attiva: ${streakCount} ${streakCount === 1 ? 'giorno' : 'giorni'}!`;
+      feedbackEl.appendChild(streakMsg);
     }
   } else {
     feedbackEl.textContent = 'Non ancora, riprova.';
@@ -331,6 +511,9 @@ function handleCheckAnswer(question, feedbackEl, controlsEl) {
 
 async function initApp() {
   quizProgress = loadQuizProgress();
+  streakData = loadStreak();
+  missionProgress = loadMissionProgress();
+  ensureGamificationPanel();
   updateXPFromProgress(quizProgress);
 
   try {
