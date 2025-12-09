@@ -2,17 +2,21 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Mia Science Quest</title>
+  <title>Mia Science Quest V2.2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="app-header">
-    <h1>Mia Science Quest</h1>
-    <div class="user-panel">
-      <span id="xp-display">XP: 0</span>
-      <span id="level-display">Livello: 1</span>
+    <div class="brand">
+      <h1>Mia Science Quest V2.2</h1>
+      <p class="muted">Allenamento scientifico con livelli di padronanza</p>
     </div>
+    <nav class="top-nav">
+      <button class="nav-btn active" data-target="training">Allenamento</button>
+      <button class="nav-btn" data-target="history">Cronologia</button>
+      <button class="nav-btn" data-target="stats">Statistiche</button>
+    </nav>
   </header>
 
   <main class="app-main">
@@ -29,10 +33,35 @@
       </div>
     </aside>
 
-    <section class="week-detail">
-      <div id="week-content">
-        <p>Seleziona una settimana per vedere i contenuti.</p>
-      </div>
+    <section class="main-panel">
+      <section id="training-view">
+        <div id="question-stage" class="card question-stage">
+          <div class="question-stage__meta">
+            <span class="tag easy">Pronto</span>
+            <small class="muted">Le domande appariranno qui in alto</small>
+          </div>
+          <p class="muted">Scegli una settimana e una materia per iniziare l'allenamento.</p>
+        </div>
+        <div class="card-grid" id="subject-dashboard"></div>
+        <div class="card" id="mission-box"></div>
+        <section class="week-detail">
+          <div id="week-content">
+            <p>Seleziona una settimana per vedere i contenuti.</p>
+          </div>
+        </section>
+      </section>
+
+      <section id="history-view" style="display:none;">
+        <div class="card">
+          <h2>Cronologia risposte</h2>
+          <p class="muted">Ultime 20 risposte con impatto sul voto.</p>
+          <div id="history-list"></div>
+        </div>
+      </section>
+
+      <section id="stats-view" style="display:none;">
+        <div id="stats-overview"></div>
+      </section>
     </section>
   </main>
 
