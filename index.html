@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mia Science Quest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Mia Science Quest</h1>
+    <div class="user-panel">
+      <span id="xp-display">XP: 0</span>
+      <span id="level-display">Livello: 1</span>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <aside class="sidebar">
+      <h2>Settimane</h2>
+      <div id="weeks-list"></div>
+
+      <div class="filters">
+        <h3>Filtra per materia</h3>
+        <button data-subject="all" class="filter-btn active">Tutte</button>
+        <button data-subject="Fisica" class="filter-btn">Fisica</button>
+        <button data-subject="Chimica" class="filter-btn">Chimica</button>
+        <button data-subject="Tecnica" class="filter-btn">Tecnica</button>
+      </div>
+    </aside>
+
+    <section class="week-detail">
+      <div id="week-content">
+        <p>Seleziona una settimana per vedere i contenuti.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>Programma gennaio–maggio • Homeschooling • Fisica, Chimica, Tecnica</small>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
