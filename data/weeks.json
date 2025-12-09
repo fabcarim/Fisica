@@ -1,0 +1,94 @@
+[
+  {
+    "id": "w1",
+    "weekNumber": 1,
+    "month": "Gennaio",
+    "title": "Misure, materia e materiali",
+    "sections": [
+      {
+        "subject": "Fisica",
+        "topic": "Grandezze fisiche e unità di misura",
+        "objectives": [
+          "Capire cosa sono lunghezza, massa, tempo e temperatura.",
+          "Conoscere m, kg, s, °C come unità di base."
+        ],
+        "keywords": ["lunghezza", "massa", "tempo", "temperatura", "unità di misura"],
+        "activities": [
+          "Misurare oggetti di casa con righello o metro.",
+          "Stimare il peso di oggetti noti (1 kg zucchero, 0,5 l acqua)."
+        ]
+      },
+      {
+        "subject": "Chimica",
+        "topic": "Cos’è la materia",
+        "objectives": [
+          "Distinguere materia ed energia.",
+          "Capire che tutta la materia è fatta di particelle."
+        ],
+        "keywords": ["materia", "energia", "particelle"],
+        "activities": [
+          "Elencare 5 oggetti solidi, 5 liquidi e 5 gas presenti in casa."
+        ]
+      },
+      {
+        "subject": "Tecnica",
+        "topic": "Materiali di base",
+        "objectives": [
+          "Riconoscere metalli, legno, plastica, vetro.",
+          "Capire differenze di durezza, resistenza e peso."
+        ],
+        "keywords": ["metalli", "legno", "plastica", "vetro"],
+        "activities": [
+          "Fare una tabella con oggetti di casa e il materiale principale."
+        ]
+      }
+    ],
+    "experiment": "Scegli due oggetti di materiali diversi (es. metallo e plastica) e confronta peso e resistenza a piccoli urti.",
+    "codingLink": "Opzionale: rappresentare la tabella dei materiali in una piccola struttura dati (array/oggetti) in Python."
+  },
+  {
+    "id": "w2",
+    "weekNumber": 2,
+    "month": "Gennaio",
+    "title": "Misure, stati della materia e proprietà",
+    "sections": [
+      {
+        "subject": "Fisica",
+        "topic": "Strumenti di misura ed errore",
+        "objectives": [
+          "Saper leggere correttamente righello, bilancia, termometro.",
+          "Intuire il concetto di errore di misura (approssimazione)."
+        ],
+        "keywords": ["righello", "bilancia", "termometro", "errore di misura"],
+        "activities": [
+          "Misurare la stessa lunghezza tre volte e confrontare le letture."
+        ]
+      },
+      {
+        "subject": "Chimica",
+        "topic": "Stati della materia e passaggi di stato",
+        "objectives": [
+          "Riconoscere solido, liquido, gas.",
+          "Capire fusione, solidificazione, evaporazione, condensazione."
+        ],
+        "keywords": ["solido", "liquido", "gas", "passaggi di stato"],
+        "activities": [
+          "Osservare un cubetto di ghiaccio che si scioglie e descrivere il processo."
+        ]
+      },
+      {
+        "subject": "Tecnica",
+        "topic": "Proprietà tecnologiche dei materiali",
+        "objectives": [
+          "Capire durezza, elasticità, fragilità, conducibilità termica ed elettrica."
+        ],
+        "keywords": ["durezza", "elasticità", "fragilità", "conducibilità"],
+        "activities": [
+          "Confrontare al tatto oggetti di metallo, legno e plastica e discutere le proprietà."
+        ]
+      }
+    ],
+    "experiment": "Mettere un cucchiaio di metallo e uno di plastica in acqua calda e confrontare quanto velocemente si scaldano.",
+    "codingLink": "Opzionale: creare un piccolo programma che chieda lo stato (solido, liquido, gas) e restituisca un esempio."
+  }
+]
