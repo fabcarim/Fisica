@@ -309,10 +309,16 @@ function startPractice(week, subject) {
     currentQuestion: null,
   };
   questionStage.innerHTML = '<div class="spinner">Caricamento domanda...</div>';
+  questionStage.scrollIntoView({ behavior: 'smooth', block: 'start' });
   setTimeout(() => {
     const next = selectQuestion(group.questions, subject);
     renderQuestion(next);
   }, 250);
+}
+
+function focusQuestionStage() {
+  const stage = document.getElementById('question-stage');
+  if (stage) stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function selectQuestion(questions, subject) {
@@ -361,27 +367,19 @@ function renderQuestion(question) {
 
   const answerArea = document.createElement('div');
   answerArea.className = 'answer-area';
-  if (question.type === 'mcq') {
-    question.options.forEach((opt, idx) => {
-      const label = document.createElement('label');
-      label.className = 'option';
-      label.innerHTML = `<input type="radio" name="mcq-option" value="${idx}" /> ${opt}`;
-      answerArea.appendChild(label);
-    });
-  } else if (question.type === 'truefalse') {
-    ['true', 'false'].forEach((val) => {
-      const label = document.createElement('label');
-      label.className = 'option';
-      label.innerHTML = `<input type="radio" name="tf-option" value="${val}" /> ${val === 'true' ? 'Vero' : 'Falso'}`;
-      answerArea.appendChild(label);
-    });
-  } else if (question.type === 'open') {
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.name = 'open-answer';
-    input.placeholder = 'Scrivi la risposta';
-    answerArea.appendChild(input);
+  const mcqOptions = question.options || [];
+  if (mcqOptions.length < 4) {
+    const warn = document.createElement('p');
+    warn.className = 'muted';
+    warn.textContent = 'Questa domanda richiede almeno 4 opzioni a scelta multipla.';
+    answerArea.appendChild(warn);
   }
+  mcqOptions.forEach((opt, idx) => {
+    const label = document.createElement('label');
+    label.className = 'option';
+    label.innerHTML = `<input type="radio" name="mcq-option" value="${idx}" /> ${opt}`;
+    answerArea.appendChild(label);
+  });
   block.appendChild(answerArea);
 
   const feedback = document.createElement('div');
@@ -407,6 +405,7 @@ function renderQuestion(question) {
   block.appendChild(controls);
 
   quizArea.appendChild(block);
+  focusQuestionStage();
 }
 
 function handleCheckAnswer(question, feedbackEl, btn) {
