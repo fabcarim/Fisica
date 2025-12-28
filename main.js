@@ -429,6 +429,28 @@ function startPractice(subject) {
   }, 150);
 }
 
+function chooseSubjectForMixed(pool) {
+  const grouped = SUBJECTS.map((subject) => ({
+    subject,
+    questions: pool.filter((q) => q.subject === subject),
+  })).filter((entry) => entry.questions.length);
+
+  if (!grouped.length) return null;
+
+  const weighted = grouped.map((entry) => {
+    const grade = grades[entry.subject] ?? 5;
+    const weight = Math.max(1, Math.round(12 - grade));
+    return { ...entry, weight };
+  });
+
+  const total = weighted.reduce((sum, w) => sum + w.weight, 0);
+  let pick = Math.random() * total;
+  for (const entry of weighted) {
+    if ((pick -= entry.weight) <= 0) return entry.subject;
+  }
+  return weighted[0].subject;
+}
+
 function selectQuestion(questions) {
   const now = Date.now();
   const last20Correct = new Set(getLastCorrectEntries(20).map((h) => h.questionId));
@@ -455,9 +477,9 @@ function selectQuestion(questions) {
   });
 
   if (currentPractice.mode === 'mixed') {
-    const weakest = [...SUBJECTS].sort((a, b) => grades[a] - grades[b])[0];
-    const weakestPool = pool.filter((q) => q.subject === weakest);
-    if (weakestPool.length) pool = weakestPool;
+    const subjectChoice = chooseSubjectForMixed(pool);
+    const subjectPool = pool.filter((q) => q.subject === subjectChoice);
+    if (subjectPool.length) pool = subjectPool;
   }
 
   const topSlice = pool.slice(0, Math.min(4, pool.length));
