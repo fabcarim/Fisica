@@ -11,6 +11,10 @@
 }
 
 * { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -117,7 +121,7 @@ body {
 
 .question-stage {
   position: sticky;
-  top: 8px;
+  top: 0;
   z-index: 10;
   max-width: 960px;
   width: 100%;
@@ -125,6 +129,7 @@ body {
   background: linear-gradient(135deg, #e0ecff, #f6f8ff);
   border: 1px solid #c7d2fe;
   box-shadow: 0 20px 45px rgba(37, 99, 235, 0.18);
+  scroll-margin-top: 12px;
 }
 
 .question-stage__meta {

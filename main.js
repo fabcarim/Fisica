@@ -478,6 +478,13 @@ function renderQuestion(question) {
   block.appendChild(controls);
 
   quizArea.appendChild(block);
+  focusQuestionStage();
+}
+
+function focusQuestionStage() {
+  const quizArea = document.getElementById('question-stage');
+  if (!quizArea) return;
+  quizArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 function handleCheckAnswer(question, feedbackEl, btn, block) {
