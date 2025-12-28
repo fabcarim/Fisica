@@ -1,6 +1,8 @@
 // main.js - Mia Science Quest V2.33
 // Migliora la gamification, rimuove le settimane, mantiene le domande sempre al centro e aggiunge una modalità mista
 
+const APP_VERSION = 'V2.33';
+
 const SUBJECTS = ['Fisica', 'Chimica', 'Tecnica'];
 const LEVELS = [
   { min: 0, max: 2, label: 'Principiante' },
@@ -21,6 +23,14 @@ let currentPractice = {
   mode: 'mixed',
   difficultyFilter: 'all',
 };
+
+function applyVersionStamp() {
+  document.title = `Mia Science Quest ${APP_VERSION}`;
+  const brandTitle = document.querySelector('[data-app-version]');
+  if (brandTitle) brandTitle.textContent = `Mia Science Quest ${APP_VERSION}`;
+  const badge = document.getElementById('app-version');
+  if (badge) badge.textContent = APP_VERSION;
+}
 
 async function loadQuestions() {
   const response = await fetch('data/questions.json');
@@ -651,6 +661,7 @@ function handleCheckAnswer(question, feedbackEl, btn, block) {
 
 async function initApp() {
   try {
+    applyVersionStamp();
     const questions = await loadQuestions();
     questionsData = questions;
     renderNavigation();
