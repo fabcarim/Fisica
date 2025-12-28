@@ -1,5 +1,5 @@
-// main.js - Mia Science Quest V2.0
-// Gestisce livelli di padronanza, cronologia e selezione smart delle domande
+// main.js - Mia Science Quest V2.3
+// Migliora la gamification, rimuove le settimane e mantiene le domande sempre al centro
 
 const SUBJECTS = ['Fisica', 'Chimica', 'Tecnica'];
 const LEVELS = [
@@ -10,22 +10,14 @@ const LEVELS = [
   { min: 8, max: 10.01, label: 'Esperto' },
 ];
 
-let weeksData = [];
 let questionsData = [];
 let grades = loadGrades();
 let historyLog = loadHistory();
 let currentPractice = {
-  weekId: null,
-  subject: null,
+  subject: SUBJECTS[0],
   pool: [],
   currentQuestion: null,
 };
-
-async function loadWeeks() {
-  const response = await fetch('data/weeks.json');
-  if (!response.ok) throw new Error('Impossibile caricare le settimane');
-  return response.json();
-}
 
 async function loadQuestions() {
   const response = await fetch('data/questions.json');
@@ -82,10 +74,6 @@ function formatDate(ts) {
   return new Date(ts).toLocaleString('it-IT');
 }
 
-function getQuestionGroup(weekId, subject) {
-  return questionsData.find((q) => q.weekId === weekId && q.subject === subject);
-}
-
 function getHistoryByQuestion(questionId) {
   return historyLog.filter((h) => h.questionId === questionId).sort((a, b) => b.timestamp - a.timestamp);
 }
@@ -106,6 +94,21 @@ function getSubjectStats(subject) {
   };
 }
 
+function getCorrectCount(subject) {
+  return historyLog.filter((h) => h.subject === subject && h.wasCorrect).length;
+}
+
+function getCurrentStreak(subject) {
+  let streak = 0;
+  for (let i = historyLog.length - 1; i >= 0; i -= 1) {
+    const entry = historyLog[i];
+    if (entry.subject !== subject) continue;
+    if (entry.wasCorrect) streak += 1;
+    else break;
+  }
+  return streak;
+}
+
 function generateMissions() {
   const subjectsByWeakness = [...SUBJECTS].sort((a, b) => grades[a] - grades[b]);
   const topics = {
@@ -120,25 +123,53 @@ function generateMissions() {
   ];
 }
 
-function renderNavigation() {
-  const tabs = document.querySelectorAll('.nav-btn');
-  const sections = {
-    training: document.getElementById('training-view'),
-    history: document.getElementById('history-view'),
-    stats: document.getElementById('stats-view'),
-  };
+function getBadgeData() {
+  const thresholds = [
+    { value: 60, label: 'Oro', emoji: '🥇' },
+    { value: 30, label: 'Argento', emoji: '🥈' },
+    { value: 10, label: 'Bronzo', emoji: '🥉' },
+  ];
+  return SUBJECTS.map((subject) => {
+    const correct = getCorrectCount(subject);
+    const badge = thresholds.find((t) => correct >= t.value);
+    const next = thresholds.find((t) => correct < t.value);
+    return {
+      subject,
+      correct,
+      badge: badge ? `${badge.emoji} ${badge.label}` : 'Inizia la collezione',
+      progress: next ? Math.min(100, Math.round((correct / next.value) * 100)) : 100,
+      nextLabel: next ? `${next.value - correct} alla ${next.label}` : 'Livello massimo raggiunto',
+    };
+  });
+}
 
-  tabs.forEach((btn) => {
+function renderNavigation() {
+  const buttons = document.querySelectorAll('.nav-btn');
+  buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      tabs.forEach((b) => b.classList.remove('active'));
+      buttons.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       const target = btn.dataset.target;
-      Object.keys(sections).forEach((key) => {
-        sections[key].style.display = key === target ? 'block' : 'none';
+      document.querySelectorAll('main section[id$="-view"]').forEach((section) => {
+        section.style.display = section.id === `${target}-view` ? 'block' : 'none';
       });
       if (target === 'history') renderHistory();
       if (target === 'stats') renderStats();
+      if (target === 'training') renderDashboard();
     });
+  });
+}
+
+function renderSubjectSwitcher() {
+  const container = document.getElementById('subject-switcher');
+  if (!container) return;
+  container.innerHTML = '';
+  SUBJECTS.forEach((subject) => {
+    const btn = document.createElement('button');
+    btn.className = `subject-chip${currentPractice.subject === subject ? ' active' : ''}`;
+    btn.textContent = subject;
+    btn.addEventListener('click', () => startPractice(subject));
+    container.appendChild(btn);
   });
 }
 
@@ -151,6 +182,7 @@ function renderDashboard() {
     const level = getLevelName(grade);
     const stats = getSubjectStats(subject);
     const progressPercent = Math.round((grade / 10) * 100);
+    const streak = getCurrentStreak(subject);
     const card = document.createElement('div');
     card.className = 'card subject-card';
     card.innerHTML = `
@@ -165,6 +197,7 @@ function renderDashboard() {
       <div class="subject-meta">
         <span>${stats.answered} domande</span>
         <span>Accuratezza 30gg: ${stats.accuracy}%</span>
+        <span>Streak: ${streak} 🔥</span>
       </div>
     `;
     container.appendChild(card);
@@ -183,6 +216,27 @@ function renderMissions() {
     ul.appendChild(li);
   });
   container.appendChild(ul);
+}
+
+function renderBadges() {
+  const container = document.getElementById('badges-box');
+  if (!container) return;
+  const badges = getBadgeData();
+  container.innerHTML = '<h3>Badge & collezioni</h3>';
+  const grid = document.createElement('div');
+  grid.className = 'badge-grid';
+  badges.forEach((item) => {
+    const pill = document.createElement('div');
+    pill.className = 'badge-pill';
+    pill.innerHTML = `
+      <strong>${item.subject}</strong>
+      <span>${item.badge}</span>
+      <span class="muted">${item.nextLabel}</span>
+      <div class="progress-bar"><span style="width:${item.progress}%"></span></div>
+    `;
+    grid.appendChild(pill);
+  });
+  container.appendChild(grid);
 }
 
 function renderHistory() {
@@ -226,99 +280,22 @@ function renderStats() {
   `;
 }
 
-function renderWeekList(weeks) {
-  const listContainer = document.getElementById('weeks-list');
-  if (!listContainer) return;
-  listContainer.innerHTML = '';
-  weeks.forEach((week) => {
-    const card = document.createElement('div');
-    card.className = 'week-card';
-    card.dataset.id = week.id;
-    card.innerHTML = `<strong>Settimana ${week.weekNumber}</strong> – ${week.title}<br/><small>${week.month}</small>`;
-    card.addEventListener('click', () => {
-      document.querySelectorAll('.week-card').forEach((c) => c.classList.remove('active'));
-      card.classList.add('active');
-      renderWeekDetail(week);
-    });
-    listContainer.appendChild(card);
-  });
-}
-
-function renderWeekDetail(week) {
-  const container = document.getElementById('week-content');
-  if (!container) return;
-  container.innerHTML = '';
-  const header = document.createElement('div');
-  header.className = 'card';
-  header.innerHTML = `
-    <h2>Settimana ${week.weekNumber} – ${week.title}</h2>
-    <p class="muted">${week.month}</p>
-  `;
-  container.appendChild(header);
-
-  const overview = document.createElement('div');
-  overview.className = 'card';
-  overview.innerHTML = '<h3>Panoramica argomenti</h3>';
-  week.sections.forEach((section) => {
-    const block = document.createElement('div');
-    block.className = 'section-block';
-    const objectivesPreview = section.objectives.slice(0, 3);
-    block.innerHTML = `
-      <div class="section-head">
-        <strong>${section.subject}</strong> – ${section.topic}
-      </div>
-      <ul>${objectivesPreview.map((obj) => `<li>${obj}</li>`).join('')}</ul>
-    `;
-    overview.appendChild(block);
-  });
-  container.appendChild(overview);
-
-  const practice = document.createElement('div');
-  practice.className = 'card';
-  practice.innerHTML = '<h3>Allenamento</h3>';
-  const subjectRow = document.createElement('div');
-  subjectRow.className = 'practice-subjects';
-  const subjects = [...new Set(week.sections.map((s) => s.subject))];
-  subjects.forEach((subject) => {
-    const btn = document.createElement('button');
-    btn.className = 'practice-btn';
-    btn.textContent = subject;
-    btn.addEventListener('click', () => startPractice(week, subject));
-    subjectRow.appendChild(btn);
-  });
-  practice.appendChild(subjectRow);
-  const hint = document.createElement('p');
-  hint.className = 'muted';
-  hint.textContent = 'Le domande appariranno nello stage in alto per tenere sempre la focus area visibile.';
-  practice.appendChild(hint);
-  container.appendChild(practice);
-}
-
-function startPractice(week, subject) {
+function startPractice(subject) {
+  currentPractice.subject = subject;
+  renderSubjectSwitcher();
   const questionStage = document.getElementById('question-stage');
   if (!questionStage) return;
-  const group = getQuestionGroup(week.id, subject);
-  if (!group || !group.questions?.length) {
+  const pool = questionsData.filter((q) => q.subject === subject);
+  currentPractice.pool = pool;
+  if (!pool.length) {
     questionStage.innerHTML = `<p>Nessuna domanda disponibile per ${subject}.</p>`;
     return;
   }
-  currentPractice = {
-    weekId: week.id,
-    subject,
-    pool: group.questions,
-    currentQuestion: null,
-  };
   questionStage.innerHTML = '<div class="spinner">Caricamento domanda...</div>';
-  questionStage.scrollIntoView({ behavior: 'smooth', block: 'start' });
   setTimeout(() => {
-    const next = selectQuestion(group.questions, subject);
+    const next = selectQuestion(pool, subject);
     renderQuestion(next);
-  }, 250);
-}
-
-function focusQuestionStage() {
-  const stage = document.getElementById('question-stage');
-  if (stage) stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 150);
 }
 
 function selectQuestion(questions, subject) {
@@ -357,6 +334,11 @@ function renderQuestion(question) {
   quizArea.innerHTML = '';
   const block = document.createElement('div');
   block.className = 'question-block card';
+
+  const level = getLevelName(grades[currentPractice.subject] ?? 5);
+  const streak = getCurrentStreak(currentPractice.subject);
+  const badge = getBadgeData().find((b) => b.subject === currentPractice.subject);
+
   const info = document.createElement('div');
   info.className = 'question-header';
   info.innerHTML = `
@@ -365,15 +347,19 @@ function renderQuestion(question) {
   `;
   block.appendChild(info);
 
+  const metaRow = document.createElement('div');
+  metaRow.className = 'subject-meta';
+  metaRow.innerHTML = `
+    <span>Materia: <strong>${currentPractice.subject}</strong></span>
+    <span>Livello: ${level}</span>
+    <span>Streak: ${streak} 🔥</span>
+    <span>Badge: ${badge ? badge.badge : 'Inizia ora'}</span>
+  `;
+  block.appendChild(metaRow);
+
   const answerArea = document.createElement('div');
   answerArea.className = 'answer-area';
   const mcqOptions = question.options || [];
-  if (mcqOptions.length < 4) {
-    const warn = document.createElement('p');
-    warn.className = 'muted';
-    warn.textContent = 'Questa domanda richiede almeno 4 opzioni a scelta multipla.';
-    answerArea.appendChild(warn);
-  }
   mcqOptions.forEach((opt, idx) => {
     const label = document.createElement('label');
     label.className = 'option';
@@ -389,54 +375,34 @@ function renderQuestion(question) {
   const controls = document.createElement('div');
   controls.className = 'question-controls';
   const checkBtn = document.createElement('button');
-  checkBtn.textContent = 'Verifica risposta';
+  checkBtn.textContent = 'Verifica';
   checkBtn.addEventListener('click', () => handleCheckAnswer(question, feedback, checkBtn));
+
   const nextBtn = document.createElement('button');
-  nextBtn.textContent = 'Domanda successiva';
+  nextBtn.textContent = 'Prossima domanda';
   nextBtn.addEventListener('click', () => {
-    block.classList.add('fade-out');
-    setTimeout(() => {
-      const next = selectQuestion(currentPractice.pool, currentPractice.subject);
-      renderQuestion(next);
-    }, 200);
+    const next = selectQuestion(currentPractice.pool, currentPractice.subject);
+    renderQuestion(next);
   });
   controls.appendChild(checkBtn);
   controls.appendChild(nextBtn);
   block.appendChild(controls);
 
   quizArea.appendChild(block);
-  focusQuestionStage();
 }
 
 function handleCheckAnswer(question, feedbackEl, btn) {
   let userCorrect = false;
   let userAnswer = '';
-  if (question.type === 'mcq') {
-    const selected = document.querySelector('input[name="mcq-option"]:checked');
-    if (!selected) {
-      feedbackEl.textContent = 'Seleziona una risposta.';
-      return;
-    }
-    userAnswer = question.options[Number(selected.value)];
-    userCorrect = Number(selected.value) === question.correctIndex;
-  } else if (question.type === 'truefalse') {
-    const selected = document.querySelector('input[name="tf-option"]:checked');
-    if (!selected) {
-      feedbackEl.textContent = 'Seleziona Vero o Falso.';
-      return;
-    }
-    userAnswer = selected.value;
-    userCorrect = String(question.correctAnswer) === selected.value;
-  } else if (question.type === 'open') {
-    const input = document.querySelector('input[name="open-answer"]');
-    userAnswer = input ? input.value.trim() : '';
-    if (!userAnswer) {
-      feedbackEl.textContent = 'Inserisci una risposta.';
-      return;
-    }
-    userCorrect = userAnswer.toLowerCase().includes(String(question.correctAnswer).toLowerCase());
+  const selected = document.querySelector('input[name="mcq-option"]:checked');
+  if (!selected) {
+    feedbackEl.textContent = 'Seleziona una risposta.';
+    return;
   }
+  userAnswer = question.options[Number(selected.value)];
+  userCorrect = Number(selected.value) === question.correctIndex;
 
+  btn.disabled = true;
   const delta = userCorrect ? question.weight * 0.15 : -question.weight * 0.1;
   grades[currentPractice.subject] = clampGrade(grades[currentPractice.subject] + delta);
   saveGrades();
@@ -467,57 +433,27 @@ function handleCheckAnswer(question, feedbackEl, btn) {
   feedbackEl.appendChild(hint);
 
   const impact = document.createElement('p');
-  impact.textContent = `${currentPractice.subject}: ${delta > 0 ? '+' : ''}${delta.toFixed(2)} punti`; 
+  impact.textContent = `${currentPractice.subject}: ${delta > 0 ? '+' : ''}${delta.toFixed(2)} punti`;
   feedbackEl.appendChild(impact);
 
   renderDashboard();
   renderMissions();
-}
-
-function attachFilterListeners() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  filterButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      const subject = btn.dataset.subject || 'all';
-      applyFilter(subject);
-    });
-  });
-}
-
-function applyFilter(subject) {
-  document.querySelectorAll('.week-card').forEach((card) => {
-    const week = weeksData.find((w) => w.id === card.dataset.id);
-    if (!week) return;
-    if (subject === 'all') {
-      card.style.display = 'block';
-      return;
-    }
-    const hasSubject = week.sections.some((section) => section.subject === subject);
-    card.style.display = hasSubject ? 'block' : 'none';
-  });
+  renderBadges();
 }
 
 async function initApp() {
   try {
-    const [weeks, questions] = await Promise.all([loadWeeks(), loadQuestions()]);
-    weeksData = weeks;
+    const questions = await loadQuestions();
     questionsData = questions;
     renderNavigation();
+    renderSubjectSwitcher();
     renderDashboard();
     renderMissions();
-    renderWeekList(weeksData);
-    attachFilterListeners();
-    const firstWeekCard = document.querySelector('.week-card');
-    if (firstWeekCard) {
-      firstWeekCard.classList.add('active');
-      const firstWeek = weeksData.find((w) => w.id === firstWeekCard.dataset.id);
-      if (firstWeek) renderWeekDetail(firstWeek);
-    }
+    renderBadges();
+    startPractice(currentPractice.subject);
   } catch (error) {
     console.error('Errore inizializzazione app:', error);
-    const container = document.getElementById('week-content');
+    const container = document.getElementById('question-stage');
     if (container) container.innerHTML = '<p class="error">Errore nel caricamento.</p>';
   }
 }
