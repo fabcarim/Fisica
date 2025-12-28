@@ -1,4 +1,4 @@
-// main.js - Mia Science Quest V2.31
+// main.js - Mia Science Quest V2.32
 // Migliora la gamification, rimuove le settimane e mantiene le domande sempre al centro
 
 const SUBJECTS = ['Fisica', 'Chimica', 'Tecnica'];
@@ -226,6 +226,10 @@ function bindResetButton() {
     renderDashboard();
     renderBadges();
     renderMissions();
+    renderStats();
+    if (currentPractice.currentQuestion) {
+      renderQuestion(currentPractice.currentQuestion);
+    }
     showCelebration('Statistiche azzerate! Continua ad allenarti.');
   });
 }
@@ -427,11 +431,6 @@ function renderQuestion(question) {
     <span>Badge: ${badge ? badge.badge : 'Inizia ora'}</span>
   `;
   block.appendChild(metaRow);
-
-  const autoNote = document.createElement('p');
-  autoNote.className = 'muted auto-note';
-  autoNote.textContent = "La verifica avviene automaticamente dopo aver scelto un'opzione.";
-  block.appendChild(autoNote);
 
   const answerArea = document.createElement('div');
   answerArea.className = 'answer-area';
