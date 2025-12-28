@@ -539,5 +539,465 @@
       "proprieta"
     ],
     "subject": "Tecnica"
+  },
+  {
+    "id": "w3-f-1",
+    "type": "mcq",
+    "question": "Quale strumento usi per misurare il tempo di una gara di corsa?",
+    "options": [
+      "Calcolatrice",
+      "Cronometro",
+      "Bilancia",
+      "Metro a nastro"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il cronometro serve a misurare intervalli di tempo molto precisi, come quelli di una gara.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": [
+      "tempo",
+      "strumenti"
+    ],
+    "subject": "Fisica"
+  },
+  {
+    "id": "w3-f-2",
+    "type": "mcq",
+    "question": "Se percorri 100 m in 20 s, qual è la tua velocità media?",
+    "options": [
+      "2 m/s",
+      "5 m/s",
+      "10 m/s",
+      "20 m/s"
+    ],
+    "correctIndex": 1,
+    "explanation": "La velocità media è spazio diviso tempo: 100 m / 20 s = 5 m/s.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "velocita",
+      "calcoli"
+    ],
+    "subject": "Fisica"
+  },
+  {
+    "id": "w3-f-3",
+    "type": "mcq",
+    "question": "Perché una barca galleggia sull'acqua?",
+    "options": [
+      "Perché è leggera",
+      "Perché la spinta di Archimede equilibra il peso",
+      "Perché l'acqua è fredda",
+      "Perché ha un motore"
+    ],
+    "correctIndex": 1,
+    "explanation": "La spinta di Archimede esercitata dall'acqua può equilibrare il peso della barca permettendole di galleggiare.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "fluido",
+      "archimede"
+    ],
+    "subject": "Fisica"
+  },
+  {
+    "id": "w3-f-4",
+    "type": "mcq",
+    "question": "Quale unità di misura usi per la forza nel Sistema Internazionale?",
+    "options": [
+      "Joule",
+      "Pascal",
+      "Newton",
+      "Watt"
+    ],
+    "correctIndex": 2,
+    "explanation": "La forza si misura in newton (N), l'unità del Sistema Internazionale.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "forza",
+      "unita"
+    ],
+    "subject": "Fisica"
+  },
+  {
+    "id": "w3-f-5",
+    "type": "mcq",
+    "question": "Cosa accade alla temperatura dell'acqua mentre bolle a livello del mare?",
+    "options": [
+      "Sale continuamente",
+      "Scende",
+      "Resta circa costante a 100 °C",
+      "Dipende dal colore della pentola"
+    ],
+    "correctIndex": 2,
+    "explanation": "Durante l'ebollizione a pressione atmosferica la temperatura rimane intorno ai 100 °C finché tutta l'acqua non è evaporata.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "temperatura",
+      "cambiamenti"
+    ],
+    "subject": "Fisica"
+  },
+  {
+    "id": "w3-f-6",
+    "type": "mcq",
+    "question": "Quando accendi una lampadina, quale trasformazione di energia avviene?",
+    "options": [
+      "Energia chimica in energia elastica",
+      "Energia elettrica in energia luminosa e termica",
+      "Energia termica in energia potenziale",
+      "Energia sonora in energia elettrica"
+    ],
+    "correctIndex": 1,
+    "explanation": "La corrente elettrica viene trasformata in luce e in parte in calore dalla lampadina.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": [
+      "energia",
+      "trasformazioni"
+    ],
+    "subject": "Fisica"
+  },
+  {
+    "id": "w3-f-7",
+    "type": "mcq",
+    "question": "Quale grafico è più adatto per mostrare come varia la temperatura durante una giornata?",
+    "options": [
+      "Grafico a barre singole",
+      "Grafico a linee nel tempo",
+      "Grafico a torta",
+      "Diagramma a dispersione senza assi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un grafico a linee mostra bene l'andamento continuo di una grandezza nel tempo, come la temperatura.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": [
+      "dati",
+      "visualizzazione"
+    ],
+    "subject": "Fisica"
+  },
+  {
+    "id": "w3-f-8",
+    "type": "mcq",
+    "question": "Se raddoppi la massa ma lasci invariato il volume, cosa succede alla densità?",
+    "options": [
+      "Resta uguale",
+      "Si dimezza",
+      "Raddoppia",
+      "Diventa zero"
+    ],
+    "correctIndex": 2,
+    "explanation": "La densità è massa diviso volume: raddoppiando la massa a volume costante la densità raddoppia.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": [
+      "densita",
+      "proporzioni"
+    ],
+    "subject": "Fisica"
+  },
+  {
+    "id": "w3-c-1",
+    "type": "mcq",
+    "question": "Quale delle seguenti è una miscela omogenea?",
+    "options": [
+      "Sale disciolto in acqua",
+      "Insalata mista",
+      "Sassi e sabbia",
+      "Olio e acqua"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando il sale si scioglie nell'acqua forma una soluzione uniforme, quindi omogenea.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "miscele",
+      "soluzioni"
+    ],
+    "subject": "Chimica"
+  },
+  {
+    "id": "w3-c-2",
+    "type": "mcq",
+    "question": "Quale di questi è un cambiamento fisico e non chimico?",
+    "options": [
+      "Ruggine che si forma sul ferro",
+      "Zucchero che si scioglie nell'acqua",
+      "Legno che brucia",
+      "Latte che caglia"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sciogliere lo zucchero nell'acqua cambia lo stato di miscela ma non la sostanza chimica.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": [
+      "cambiamenti",
+      "fisico"
+    ],
+    "subject": "Chimica"
+  },
+  {
+    "id": "w3-c-3",
+    "type": "mcq",
+    "question": "Che cosa rappresenta H2O nella formula dell'acqua?",
+    "options": [
+      "Due molecole di idrogeno e una di ossigeno",
+      "Due atomi di idrogeno e uno di ossigeno in una molecola",
+      "Tre atomi di ossigeno",
+      "Un atomo di idrogeno e due di ossigeno"
+    ],
+    "correctIndex": 1,
+    "explanation": "La formula H2O indica una molecola formata da due atomi di idrogeno e uno di ossigeno.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "molecole",
+      "simboli"
+    ],
+    "subject": "Chimica"
+  },
+  {
+    "id": "w3-c-4",
+    "type": "mcq",
+    "question": "Qual è il gas più abbondante nell'aria che respiriamo?",
+    "options": [
+      "Ossigeno",
+      "Anidride carbonica",
+      "Azoto",
+      "Idrogeno"
+    ],
+    "correctIndex": 2,
+    "explanation": "Circa il 78% dell'aria è azoto, seguito dall'ossigeno con circa il 21%.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": [
+      "atmosfera",
+      "gas"
+    ],
+    "subject": "Chimica"
+  },
+  {
+    "id": "w3-c-5",
+    "type": "mcq",
+    "question": "Cosa succede al volume di un gas se lo comprimi a temperatura costante?",
+    "options": [
+      "Aumenta",
+      "Diminuisce",
+      "Resta uguale",
+      "Diventa liquido all'istante"
+    ],
+    "correctIndex": 1,
+    "explanation": "Secondo la legge di Boyle, a temperatura costante il volume del gas diminuisce quando la pressione aumenta.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": [
+      "gas",
+      "pressione"
+    ],
+    "subject": "Chimica"
+  },
+  {
+    "id": "w3-c-6",
+    "type": "mcq",
+    "question": "Quale metodo useresti per separare sabbia e acqua?",
+    "options": [
+      "Distillazione",
+      "Filtrazione",
+      "Cromatografia",
+      "Elettrolisi"
+    ],
+    "correctIndex": 1,
+    "explanation": "La filtrazione permette di trattenere i granelli di sabbia lasciando passare l'acqua.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "separazione",
+      "miscele"
+    ],
+    "subject": "Chimica"
+  },
+  {
+    "id": "w3-c-7",
+    "type": "mcq",
+    "question": "Quale proprietà indica quanto facilmente una sostanza prende fuoco?",
+    "options": [
+      "Durezza",
+      "Solubilità",
+      "Infiammabilità",
+      "Densità"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'infiammabilità descrive la facilità con cui una sostanza si accende e brucia.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "proprieta",
+      "sicurezza"
+    ],
+    "subject": "Chimica"
+  },
+  {
+    "id": "w3-c-8",
+    "type": "mcq",
+    "question": "Quando un liquido diventa solido, come chiami questo cambiamento di stato?",
+    "options": [
+      "Evaporazione",
+      "Sublimazione",
+      "Condensazione",
+      "Solidificazione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il passaggio da liquido a solido è la solidificazione (o congelamento).",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": [
+      "stati",
+      "cambiamenti"
+    ],
+    "subject": "Chimica"
+  },
+  {
+    "id": "w3-t-1",
+    "type": "mcq",
+    "question": "Quale materiale sceglieresti per isolare termicamente una casa?",
+    "options": [
+      "Alluminio lucido",
+      "Vetro semplice",
+      "Lana di vetro",
+      "Acciaio inox"
+    ],
+    "correctIndex": 2,
+    "explanation": "La lana di vetro è un materiale isolante che riduce la dispersione di calore.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "isolamento",
+      "materiali"
+    ],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "w3-t-2",
+    "type": "mcq",
+    "question": "Quale utensile usi per tagliare con precisione una tavola di legno?",
+    "options": [
+      "Martello",
+      "Seghetto a mano",
+      "Cacciavite",
+      "Tenaglia"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un seghetto a mano permette tagli controllati e precisi nel legno.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": [
+      "attrezzi",
+      "lavorazione"
+    ],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "w3-t-3",
+    "type": "mcq",
+    "question": "Il simbolo di riciclo con il numero 1 su una bottiglia indica che è fatta di:",
+    "options": [
+      "Carta",
+      "Vetro",
+      "PET (polietilene tereftalato)",
+      "Legno pressato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il codice 1 identifica il PET, una plastica comune e riciclabile usata per le bottiglie.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "riciclo",
+      "materiali"
+    ],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "w3-t-4",
+    "type": "mcq",
+    "question": "Quale tra questi materiali è magnetico?",
+    "options": [
+      "Ferro",
+      "Alluminio",
+      "Plastica",
+      "Vetro"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il ferro è magnetico e viene attratto da una calamita, a differenza di plastica e vetro.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": [
+      "magnetismo",
+      "materiali"
+    ],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "w3-t-5",
+    "type": "mcq",
+    "question": "Perché l'alluminio è spesso scelto per i telai delle biciclette?",
+    "options": [
+      "Perché è magnetico",
+      "Perché è molto pesante",
+      "Perché è leggero e resiste alla corrosione",
+      "Perché cambia colore al sole"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'alluminio è leggero, rigido e non arrugginisce facilmente, qualità utili nei telai.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "materiali",
+      "proprieta"
+    ],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "w3-t-6",
+    "type": "mcq",
+    "question": "Quale tecnica permette di unire due pezzi di metallo in modo permanente?",
+    "options": [
+      "Avvitatura",
+      "Saldatura",
+      "Incollaggio con nastro",
+      "Cucitura"
+    ],
+    "correctIndex": 1,
+    "explanation": "La saldatura fonde i bordi dei pezzi metallici creando un'unione permanente.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": [
+      "lavorazione",
+      "giunzioni"
+    ],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "w3-t-7",
+    "type": "mcq",
+    "question": "Quale caratteristica rende il cartone ondulato adatto agli imballaggi?",
+    "options": [
+      "È trasparente",
+      "È pesantissimo",
+      "Assorbe gli urti pur rimanendo leggero",
+      "Conduce elettricità"
+    ],
+    "correctIndex": 2,
+    "explanation": "La struttura ondulata del cartone ammortizza gli urti mantenendo bassa la massa dell'imballo.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": [
+      "imballaggi",
+      "materiali"
+    ],
+    "subject": "Tecnica"
   }
 ]

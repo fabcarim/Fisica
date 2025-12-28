@@ -1,5 +1,5 @@
-// main.js - Mia Science Quest V2.32
-// Migliora la gamification, rimuove le settimane e mantiene le domande sempre al centro
+// main.js - Mia Science Quest V2.33
+// Migliora la gamification, rimuove le settimane, mantiene le domande sempre al centro e aggiunge una modalità mista
 
 const SUBJECTS = ['Fisica', 'Chimica', 'Tecnica'];
 const LEVELS = [
@@ -18,6 +18,8 @@ let currentPractice = {
   subject: SUBJECTS[0],
   pool: [],
   currentQuestion: null,
+  mode: 'mixed',
+  difficultyFilter: 'all',
 };
 
 async function loadQuestions() {
@@ -101,6 +103,13 @@ function getLastCorrectEntries(limit = 20) {
   return historyLog.filter((h) => h.wasCorrect).sort((a, b) => b.timestamp - a.timestamp).slice(0, limit);
 }
 
+function getRecentQuestionIds(limit = 50) {
+  return historyLog
+    .slice(-limit)
+    .sort((a, b) => b.timestamp - a.timestamp)
+    .map((h) => h.questionId);
+}
+
 function getSubjectStats(subject) {
   const last30 = Date.now() - 30 * 24 * 60 * 60 * 1000;
   const entries = historyLog.filter(
@@ -181,19 +190,19 @@ function showCelebration(message) {
   setTimeout(() => toast.remove(), 2600);
 }
 
-function celebrateMilestones(prevGrade, nextGrade, wasCorrect) {
+function celebrateMilestones(prevGrade, nextGrade, wasCorrect, subject) {
   const levelBefore = getLevelName(prevGrade);
   const levelAfter = getLevelName(nextGrade);
   if (levelAfter !== levelBefore) {
-    showCelebration(`Nuovo livello ${levelAfter} in ${currentPractice.subject}!`);
+    showCelebration(`Nuovo livello ${levelAfter} in ${subject}!`);
   }
   if (wasCorrect) {
     const thresholds = [10, 30, 60];
-    const correctBefore = getCorrectCount(currentPractice.subject) - 1;
-    const correctNow = getCorrectCount(currentPractice.subject);
+    const correctBefore = getCorrectCount(subject) - 1;
+    const correctNow = getCorrectCount(subject);
     const unlocked = thresholds.find((t) => correctBefore < t && correctNow >= t);
     if (unlocked) {
-      showCelebration(`🎉 Traguardo raggiunto: ${unlocked} risposte corrette in ${currentPractice.subject}!`);
+      showCelebration(`🎉 Traguardo raggiunto: ${unlocked} risposte corrette in ${subject}!`);
     }
   }
 }
@@ -213,6 +222,37 @@ function renderNavigation() {
       if (target === 'training') renderDashboard();
     });
   });
+}
+
+function renderModeToolbar() {
+  const modeContainer = document.getElementById('mode-switcher');
+  const difficultySelect = document.getElementById('difficulty-filter');
+  if (modeContainer) {
+    modeContainer.innerHTML = '';
+    const modes = [
+      { id: 'mixed', label: 'Misto materie' },
+      { id: 'subject', label: 'Per materia' },
+    ];
+    modes.forEach((mode) => {
+      const btn = document.createElement('button');
+      btn.className = `mode-btn${currentPractice.mode === mode.id ? ' active' : ''}`;
+      btn.textContent = mode.label;
+      btn.addEventListener('click', () => {
+        currentPractice.mode = mode.id;
+        renderModeToolbar();
+        renderSubjectSwitcher();
+        startPractice(currentPractice.subject);
+      });
+      modeContainer.appendChild(btn);
+    });
+  }
+  if (difficultySelect) {
+    difficultySelect.value = currentPractice.difficultyFilter;
+    difficultySelect.onchange = (e) => {
+      currentPractice.difficultyFilter = e.target.value;
+      startPractice(currentPractice.subject);
+    };
+  }
 }
 
 function bindResetButton() {
@@ -240,9 +280,14 @@ function renderSubjectSwitcher() {
   container.innerHTML = '';
   SUBJECTS.forEach((subject) => {
     const btn = document.createElement('button');
-    btn.className = `subject-chip${currentPractice.subject === subject ? ' active' : ''}`;
+    const disabled = currentPractice.mode === 'mixed';
+    btn.className = `subject-chip${currentPractice.subject === subject ? ' active' : ''}${
+      disabled ? ' disabled' : ''
+    }`;
     btn.textContent = subject;
-    btn.addEventListener('click', () => startPractice(subject));
+    if (!disabled) {
+      btn.addEventListener('click', () => startPractice(subject));
+    }
     container.appendChild(btn);
   });
 }
@@ -354,36 +399,50 @@ function renderStats() {
   `;
 }
 
+function buildPracticePool() {
+  let pool = [...questionsData];
+  if (currentPractice.mode === 'subject') {
+    pool = pool.filter((q) => q.subject === currentPractice.subject);
+  }
+  if (currentPractice.difficultyFilter !== 'all') {
+    pool = pool.filter((q) => q.difficulty === currentPractice.difficultyFilter);
+  }
+  return pool;
+}
+
 function startPractice(subject) {
-  currentPractice.subject = subject;
+  if (subject) currentPractice.subject = subject;
   renderSubjectSwitcher();
   const questionStage = document.getElementById('question-stage');
   if (!questionStage) return;
-  const pool = questionsData.filter((q) => q.subject === subject);
+  const pool = buildPracticePool();
   currentPractice.pool = pool;
+  const subjectLabel = currentPractice.mode === 'mixed' ? 'mix materie' : currentPractice.subject;
   if (!pool.length) {
-    questionStage.innerHTML = `<p>Nessuna domanda disponibile per ${subject}.</p>`;
+    questionStage.innerHTML = `<p>Nessuna domanda disponibile per ${subjectLabel}.</p>`;
     return;
   }
   questionStage.innerHTML = '<div class="spinner">Caricamento domanda...</div>';
   setTimeout(() => {
-    const next = selectQuestion(pool, subject);
+    const next = selectQuestion(pool);
     renderQuestion(next);
   }, 150);
 }
 
-function selectQuestion(questions, subject) {
+function selectQuestion(questions) {
   const now = Date.now();
   const last20Correct = new Set(getLastCorrectEntries(20).map((h) => h.questionId));
+  const recentSet = new Set(getRecentQuestionIds(50));
   const eligible = questions.filter((q) => {
     if (last20Correct.has(q.id)) return false;
+    if (recentSet.has(q.id)) return false;
     const history = getHistoryByQuestion(q.id);
     const lastCorrect = history.find((h) => h.wasCorrect);
     if (lastCorrect && now - lastCorrect.timestamp < 7 * 24 * 60 * 60 * 1000) return false;
     return true;
   });
 
-  const pool = (eligible.length ? eligible : questions).slice();
+  let pool = (eligible.length ? eligible : questions).slice();
   pool.sort((a, b) => {
     const aHistory = getHistoryByQuestion(a.id);
     const bHistory = getHistoryByQuestion(b.id);
@@ -394,7 +453,15 @@ function selectQuestion(questions, subject) {
     if (diff !== 0) return diff;
     return (bHistory.length || 0) - (aHistory.length || 0);
   });
-  return pool[0];
+
+  if (currentPractice.mode === 'mixed') {
+    const weakest = [...SUBJECTS].sort((a, b) => grades[a] - grades[b])[0];
+    const weakestPool = pool.filter((q) => q.subject === weakest);
+    if (weakestPool.length) pool = weakestPool;
+  }
+
+  const topSlice = pool.slice(0, Math.min(4, pool.length));
+  return topSlice[Math.floor(Math.random() * topSlice.length)] || pool[0];
 }
 
 function renderQuestion(question) {
@@ -410,9 +477,10 @@ function renderQuestion(question) {
   block.className = 'question-block card';
   block.dataset.answered = 'false';
 
-  const level = getLevelName(grades[currentPractice.subject] ?? 5);
-  const streak = getCurrentStreak(currentPractice.subject);
-  const badge = getBadgeData().find((b) => b.subject === currentPractice.subject);
+  const subject = question.subject;
+  const level = getLevelName(grades[subject] ?? 5);
+  const streak = getCurrentStreak(subject);
+  const badge = getBadgeData().find((b) => b.subject === subject);
 
   const info = document.createElement('div');
   info.className = 'question-header';
@@ -425,10 +493,12 @@ function renderQuestion(question) {
   const metaRow = document.createElement('div');
   metaRow.className = 'subject-meta';
   metaRow.innerHTML = `
-    <span>Materia: <strong>${currentPractice.subject}</strong></span>
+    <span>Materia: <strong>${subject}</strong></span>
     <span>Livello: ${level}</span>
     <span>Streak: ${streak} 🔥</span>
     <span>Badge: ${badge ? badge.badge : 'Inizia ora'}</span>
+    <span>Modalità: ${currentPractice.mode === 'mixed' ? 'Mix materie' : 'Materia singola'}</span>
+    <span>Filtro: ${currentPractice.difficultyFilter === 'all' ? 'Tutte' : currentPractice.difficultyFilter}</span>
   `;
   block.appendChild(metaRow);
 
@@ -469,7 +539,7 @@ function renderQuestion(question) {
   const nextBtn = document.createElement('button');
   nextBtn.textContent = 'Prossima domanda';
   nextBtn.addEventListener('click', () => {
-    const next = selectQuestion(currentPractice.pool, currentPractice.subject);
+    const next = selectQuestion(currentPractice.pool);
     renderQuestion(next);
   });
   controls.appendChild(checkBtn);
@@ -502,14 +572,15 @@ function handleCheckAnswer(question, feedbackEl, btn, block) {
   if (block) block.dataset.answered = 'true';
   btn.disabled = true;
   btn.textContent = 'Verificata';
+  const subject = question.subject;
   const delta = userCorrect ? question.weight * 0.15 : -question.weight * 0.1;
-  const previousGrade = grades[currentPractice.subject];
-  grades[currentPractice.subject] = clampGrade(grades[currentPractice.subject] + delta);
+  const previousGrade = grades[subject];
+  grades[subject] = clampGrade(grades[subject] + delta);
   saveGrades();
 
   historyLog.push({
     questionId: question.id,
-    subject: currentPractice.subject,
+    subject,
     difficulty: question.difficulty,
     wasCorrect: userCorrect,
     userAnswer,
@@ -540,7 +611,7 @@ function handleCheckAnswer(question, feedbackEl, btn, block) {
   feedbackEl.appendChild(hint);
 
   const impact = document.createElement('p');
-  impact.textContent = `${currentPractice.subject}: ${delta > 0 ? '+' : ''}${delta.toFixed(2)} punti`;
+  impact.textContent = `${subject}: ${delta > 0 ? '+' : ''}${delta.toFixed(2)} punti`;
   impact.className = 'impact';
   feedbackEl.appendChild(impact);
 
@@ -553,7 +624,7 @@ function handleCheckAnswer(question, feedbackEl, btn, block) {
   renderMissions();
   renderBadges();
 
-  celebrateMilestones(previousGrade, grades[currentPractice.subject], userCorrect);
+  celebrateMilestones(previousGrade, grades[subject], userCorrect, subject);
 }
 
 async function initApp() {
@@ -562,6 +633,7 @@ async function initApp() {
     questionsData = questions;
     renderNavigation();
     bindResetButton();
+    renderModeToolbar();
     renderSubjectSwitcher();
     renderDashboard();
     renderMissions();

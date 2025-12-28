@@ -2,14 +2,14 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Mia Science Quest V2.32</title>
+  <title>Mia Science Quest V2.33</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="app-header">
     <div class="brand">
-      <h1>Mia Science Quest V2.32</h1>
+      <h1>Mia Science Quest V2.33</h1>
       <p class="muted">Allenamento scientifico con livelli di padronanza</p>
     </div>
     <nav class="top-nav">
@@ -26,13 +26,25 @@
     <section class="main-panel">
       <section id="training-view">
         <div class="question-ring">
+          <div class="mode-bar">
+            <div class="mode-switcher" id="mode-switcher"></div>
+            <div class="mode-filter">
+              <label for="difficulty-filter">Tipologia</label>
+              <select id="difficulty-filter">
+                <option value="all">Tutte le difficoltà</option>
+                <option value="easy">Facili</option>
+                <option value="medium">Medie</option>
+                <option value="hard">Difficili</option>
+              </select>
+            </div>
+          </div>
           <div class="subject-switcher" id="subject-switcher"></div>
           <div id="question-stage" class="card question-stage">
             <div class="question-stage__meta">
               <span class="tag easy">Pronto</span>
               <small class="muted">Le domande appariranno qui, centrali e senza scorrere.</small>
             </div>
-            <p class="muted">Seleziona una materia per iniziare l'allenamento.</p>
+            <p class="muted">Scegli la modalità mista o una materia per iniziare l'allenamento.</p>
           </div>
         </div>
         <div class="card-grid" id="subject-dashboard"></div>
