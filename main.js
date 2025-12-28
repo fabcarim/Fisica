@@ -1,4 +1,4 @@
-// main.js - Mia Science Quest V2.3
+// main.js - Mia Science Quest V2.31
 // Migliora la gamification, rimuove le settimane e mantiene le domande sempre al centro
 
 const SUBJECTS = ['Fisica', 'Chimica', 'Tecnica'];
@@ -13,6 +13,7 @@ const LEVELS = [
 let questionsData = [];
 let grades = loadGrades();
 let historyLog = loadHistory();
+let metaState = loadMeta();
 let currentPractice = {
   subject: SUBJECTS[0],
   pool: [],
@@ -61,6 +62,24 @@ function saveHistory() {
   }
 }
 
+function loadMeta() {
+  try {
+    const saved = localStorage.getItem('mia-science-meta');
+    if (saved) return JSON.parse(saved);
+  } catch (e) {
+    console.warn('Impossibile leggere i metadati', e);
+  }
+  return { metricsResetAt: 0 };
+}
+
+function saveMeta() {
+  try {
+    localStorage.setItem('mia-science-meta', JSON.stringify(metaState));
+  } catch (e) {
+    console.warn('Impossibile salvare i metadati', e);
+  }
+}
+
 function clampGrade(value) {
   return Math.min(10, Math.max(0, Number(value.toFixed(2))));
 }
@@ -84,10 +103,14 @@ function getLastCorrectEntries(limit = 20) {
 
 function getSubjectStats(subject) {
   const last30 = Date.now() - 30 * 24 * 60 * 60 * 1000;
-  const entries = historyLog.filter((h) => h.subject === subject && h.timestamp >= last30);
+  const entries = historyLog.filter(
+    (h) => h.subject === subject && h.timestamp >= last30 && h.timestamp >= (metaState.metricsResetAt || 0)
+  );
   const correct = entries.filter((h) => h.wasCorrect).length;
   const total = entries.length || 1;
-  const questionsAnswered = historyLog.filter((h) => h.subject === subject).length;
+  const questionsAnswered = historyLog.filter(
+    (h) => h.subject === subject && h.timestamp >= (metaState.metricsResetAt || 0)
+  ).length;
   return {
     accuracy: Math.round((correct / total) * 100),
     answered: questionsAnswered,
@@ -95,13 +118,16 @@ function getSubjectStats(subject) {
 }
 
 function getCorrectCount(subject) {
-  return historyLog.filter((h) => h.subject === subject && h.wasCorrect).length;
+  return historyLog.filter(
+    (h) => h.subject === subject && h.wasCorrect && h.timestamp >= (metaState.metricsResetAt || 0)
+  ).length;
 }
 
 function getCurrentStreak(subject) {
   let streak = 0;
   for (let i = historyLog.length - 1; i >= 0; i -= 1) {
     const entry = historyLog[i];
+    if (entry.timestamp < (metaState.metricsResetAt || 0)) continue;
     if (entry.subject !== subject) continue;
     if (entry.wasCorrect) streak += 1;
     else break;
@@ -143,6 +169,35 @@ function getBadgeData() {
   });
 }
 
+function showCelebration(message) {
+  const stage = document.getElementById('question-stage');
+  if (!stage) return;
+  const toast = document.createElement('div');
+  toast.className = 'celebration-toast';
+  toast.textContent = message;
+  stage.appendChild(toast);
+  setTimeout(() => toast.classList.add('visible'), 20);
+  setTimeout(() => toast.classList.remove('visible'), 2200);
+  setTimeout(() => toast.remove(), 2600);
+}
+
+function celebrateMilestones(prevGrade, nextGrade, wasCorrect) {
+  const levelBefore = getLevelName(prevGrade);
+  const levelAfter = getLevelName(nextGrade);
+  if (levelAfter !== levelBefore) {
+    showCelebration(`Nuovo livello ${levelAfter} in ${currentPractice.subject}!`);
+  }
+  if (wasCorrect) {
+    const thresholds = [10, 30, 60];
+    const correctBefore = getCorrectCount(currentPractice.subject) - 1;
+    const correctNow = getCorrectCount(currentPractice.subject);
+    const unlocked = thresholds.find((t) => correctBefore < t && correctNow >= t);
+    if (unlocked) {
+      showCelebration(`🎉 Traguardo raggiunto: ${unlocked} risposte corrette in ${currentPractice.subject}!`);
+    }
+  }
+}
+
 function renderNavigation() {
   const buttons = document.querySelectorAll('.nav-btn');
   buttons.forEach((btn) => {
@@ -157,6 +212,21 @@ function renderNavigation() {
       if (target === 'stats') renderStats();
       if (target === 'training') renderDashboard();
     });
+  });
+}
+
+function bindResetButton() {
+  const resetBtn = document.getElementById('reset-stats');
+  if (!resetBtn) return;
+  resetBtn.addEventListener('click', () => {
+    grades = { Fisica: 5, Chimica: 5, Tecnica: 5 };
+    saveGrades();
+    metaState.metricsResetAt = Date.now();
+    saveMeta();
+    renderDashboard();
+    renderBadges();
+    renderMissions();
+    showCelebration('Statistiche azzerate! Continua ad allenarti.');
   });
 }
 
@@ -334,6 +404,7 @@ function renderQuestion(question) {
   quizArea.innerHTML = '';
   const block = document.createElement('div');
   block.className = 'question-block card';
+  block.dataset.answered = 'false';
 
   const level = getLevelName(grades[currentPractice.subject] ?? 5);
   const streak = getCurrentStreak(currentPractice.subject);
@@ -357,6 +428,11 @@ function renderQuestion(question) {
   `;
   block.appendChild(metaRow);
 
+  const autoNote = document.createElement('p');
+  autoNote.className = 'muted auto-note';
+  autoNote.textContent = "La verifica avviene automaticamente dopo aver scelto un'opzione.";
+  block.appendChild(autoNote);
+
   const answerArea = document.createElement('div');
   answerArea.className = 'answer-area';
   const mcqOptions = question.options || [];
@@ -364,6 +440,17 @@ function renderQuestion(question) {
     const label = document.createElement('label');
     label.className = 'option';
     label.innerHTML = `<input type="radio" name="mcq-option" value="${idx}" /> ${opt}`;
+    label.querySelector('input').addEventListener('change', () => {
+      const checkBtn = block.querySelector('.verify-btn');
+      if (block.dataset.answered === 'true') return;
+      checkBtn.disabled = false;
+      checkBtn.textContent = 'Verifico...';
+      setTimeout(() => {
+        if (block.dataset.answered === 'false') {
+          handleCheckAnswer(question, feedback, checkBtn, block);
+        }
+      }, 200);
+    });
     answerArea.appendChild(label);
   });
   block.appendChild(answerArea);
@@ -375,8 +462,10 @@ function renderQuestion(question) {
   const controls = document.createElement('div');
   controls.className = 'question-controls';
   const checkBtn = document.createElement('button');
-  checkBtn.textContent = 'Verifica';
-  checkBtn.addEventListener('click', () => handleCheckAnswer(question, feedback, checkBtn));
+  checkBtn.className = 'verify-btn';
+  checkBtn.textContent = 'Verifica automatica';
+  checkBtn.disabled = true;
+  checkBtn.addEventListener('click', () => handleCheckAnswer(question, feedback, checkBtn, block));
 
   const nextBtn = document.createElement('button');
   nextBtn.textContent = 'Prossima domanda';
@@ -391,7 +480,9 @@ function renderQuestion(question) {
   quizArea.appendChild(block);
 }
 
-function handleCheckAnswer(question, feedbackEl, btn) {
+function handleCheckAnswer(question, feedbackEl, btn, block) {
+  if (!question || (block && block.dataset.answered === 'true')) return;
+
   let userCorrect = false;
   let userAnswer = '';
   const selected = document.querySelector('input[name="mcq-option"]:checked');
@@ -402,8 +493,11 @@ function handleCheckAnswer(question, feedbackEl, btn) {
   userAnswer = question.options[Number(selected.value)];
   userCorrect = Number(selected.value) === question.correctIndex;
 
+  if (block) block.dataset.answered = 'true';
   btn.disabled = true;
+  btn.textContent = 'Verificata';
   const delta = userCorrect ? question.weight * 0.15 : -question.weight * 0.1;
+  const previousGrade = grades[currentPractice.subject];
   grades[currentPractice.subject] = clampGrade(grades[currentPractice.subject] + delta);
   saveGrades();
 
@@ -419,10 +513,17 @@ function handleCheckAnswer(question, feedbackEl, btn) {
   });
   saveHistory();
 
+  const inputs = document.querySelectorAll('input[name="mcq-option"]');
+  inputs.forEach((inp) => {
+    inp.disabled = true;
+    const wrapper = inp.closest('label');
+    if (wrapper) wrapper.classList.add('locked');
+  });
+
   feedbackEl.innerHTML = '';
   const msg = document.createElement('p');
   msg.textContent = userCorrect ? 'Corretto! ' : 'Risposta errata.';
-  msg.className = userCorrect ? 'positive' : 'negative';
+  msg.className = userCorrect ? 'positive flash' : 'negative flash';
   feedbackEl.appendChild(msg);
 
   const hint = document.createElement('p');
@@ -434,11 +535,19 @@ function handleCheckAnswer(question, feedbackEl, btn) {
 
   const impact = document.createElement('p');
   impact.textContent = `${currentPractice.subject}: ${delta > 0 ? '+' : ''}${delta.toFixed(2)} punti`;
+  impact.className = 'impact';
   feedbackEl.appendChild(impact);
+
+  if (block) {
+    block.classList.add(userCorrect ? 'glow-correct' : 'glow-wrong');
+    setTimeout(() => block.classList.remove('glow-correct', 'glow-wrong'), 1600);
+  }
 
   renderDashboard();
   renderMissions();
   renderBadges();
+
+  celebrateMilestones(previousGrade, grades[currentPractice.subject], userCorrect);
 }
 
 async function initApp() {
@@ -446,6 +555,7 @@ async function initApp() {
     const questions = await loadQuestions();
     questionsData = questions;
     renderNavigation();
+    bindResetButton();
     renderSubjectSwitcher();
     renderDashboard();
     renderMissions();
