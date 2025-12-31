@@ -1,7 +1,7 @@
-// main.js - Mia Science Quest V2.33
+// main.js - Mia Science Quest V2.35
 // Migliora la gamification, rimuove le settimane, mantiene le domande sempre al centro e aggiunge una modalità mista
 
-const APP_VERSION = 'V2.33';
+const APP_VERSION = 'V2.35';
 
 const SUBJECTS = ['Fisica', 'Chimica', 'Tecnica'];
 const LEVELS = [
@@ -114,10 +114,16 @@ function getLastCorrectEntries(limit = 20) {
 }
 
 function getRecentQuestionIds(limit = 50) {
-  return historyLog
-    .slice(-limit)
-    .sort((a, b) => b.timestamp - a.timestamp)
-    .map((h) => h.questionId);
+  const seen = new Set();
+  const ids = [];
+  for (let i = historyLog.length - 1; i >= 0 && ids.length < limit; i -= 1) {
+    const id = historyLog[i].questionId;
+    if (!seen.has(id)) {
+      seen.add(id);
+      ids.push(id);
+    }
+  }
+  return ids;
 }
 
 function getSubjectStats(subject) {

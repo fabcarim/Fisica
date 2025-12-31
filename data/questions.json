@@ -1,1003 +1,1082 @@
 [
   {
-    "id": "w1-f-1",
+    "id": "f-01",
     "type": "mcq",
-    "question": "Quale delle seguenti è un'unità di lunghezza?",
-    "options": [
-      "chilogrammo (kg)",
-      "metro (m)",
-      "secondo (s)",
-      "ampere (A)"
-    ],
+    "question": "Quale grandezza misura direttamente un dinamometro a molla?",
+    "options": ["La massa dell'oggetto", "La forza applicata", "La temperatura dell'ambiente", "La velocità dell'oggetto"],
     "correctIndex": 1,
-    "explanation": "Il metro (m) è l'unità fondamentale di lunghezza nel Sistema Internazionale.",
+    "explanation": "Il dinamometro misura la forza sfruttando l'allungamento della molla.",
     "difficulty": "easy",
     "weight": 1,
-    "tags": [
-      "misure",
-      "lunghezza"
-    ],
+    "tags": ["forza", "misure"],
     "subject": "Fisica"
   },
   {
-    "id": "w1-f-2",
+    "id": "f-02",
     "type": "mcq",
-    "question": "Quale strumento usi a casa per misurare la massa degli ingredienti?",
-    "options": [
-      "Termometro",
-      "Orologio",
-      "Bilancia da cucina",
-      "Righello"
-    ],
-    "correctIndex": 2,
-    "explanation": "La bilancia da cucina misura la massa in grammi o chilogrammi.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "strumenti",
-      "massa"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w1-f-3",
-    "type": "mcq",
-    "question": "Qual è l'unità di base del tempo nel Sistema Internazionale (SI)?",
-    "options": [
-      "minuto (min)",
-      "secondo (s)",
-      "ora (h)",
-      "millisecondo (ms)"
-    ],
-    "correctIndex": 1,
-    "explanation": "Il secondo (s) è l'unità di base per misurare il tempo.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "tempo",
-      "unita-base"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w1-f-4",
-    "type": "mcq",
-    "question": "Quale unità usiamo di solito in Italia per misurare la temperatura quotidiana?",
-    "options": [
-      "Kelvin (K)",
-      "Gradi Celsius (°C)",
-      "Gradi Fahrenheit (°F)",
-      "Gradi Rankine (°R)"
-    ],
-    "correctIndex": 1,
-    "explanation": "In Italia la temperatura dell'aria si esprime comunemente in gradi Celsius.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "temperatura",
-      "scala"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w1-f-5",
-    "type": "mcq",
-    "question": "Come chiamiamo grandezze come lunghezza, massa, tempo e temperatura?",
-    "options": [
-      "Energie",
-      "Materiali",
-      "Grandezze fisiche",
-      "Forze"
-    ],
-    "correctIndex": 2,
-    "explanation": "Sono grandezze fisiche fondamentali che descrivono il mondo intorno a noi.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "quantita-fisiche",
-      "concetti-base"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w1-c-1",
-    "type": "mcq",
-    "question": "Quale affermazione descrive correttamente la materia?",
-    "options": [
-      "Solo i solidi sono materia",
-      "Tutto ciò che ha massa e occupa spazio è materia",
-      "Solo ciò che possiamo toccare è materia",
-      "Solo liquidi e gas sono materia"
-    ],
-    "correctIndex": 1,
-    "explanation": "Tutto ciò che possiede massa e volume è considerato materia, che sia solido, liquido o gassoso.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "materia",
-      "massa",
-      "volume"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w1-c-2",
-    "type": "mcq",
-    "question": "Quale di questi NON è fatto di materia?",
-    "options": [
-      "Aria",
-      "Luce",
-      "Acqua",
-      "Un cucchiaio di legno"
-    ],
-    "correctIndex": 1,
-    "explanation": "La luce è energia, non possiede massa né occupa spazio.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "materia",
-      "energia"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w1-c-3",
-    "type": "mcq",
-    "question": "Quali piccolissime entità costituiscono tutta la materia?",
-    "options": [
-      "Onde sonore",
-      "Atomi e molecole",
-      "Lampi di luce",
-      "Campi magnetici"
-    ],
-    "correctIndex": 1,
-    "explanation": "La materia è formata da particelle piccolissime: atomi e molecole.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "particelle",
-      "struttura"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w1-c-4",
-    "type": "mcq",
-    "question": "Quale elenco mostra un solido, un liquido e un gas?",
-    "options": [
-      "Mattone, latte, ossigeno",
-      "Acqua, succo, bibita",
-      "Fumo, nebbia, foschia",
-      "Sabbia, pietra, metallo"
-    ],
+    "question": "Qual è l'unità di misura della densità nel Sistema Internazionale?",
+    "options": ["kg/m³", "N", "J", "Pa"],
     "correctIndex": 0,
-    "explanation": "Mattone è solido, il latte è liquido, l'ossigeno è gas.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "stati",
-      "materia"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w1-c-5",
-    "type": "mcq",
-    "question": "Quale frase descrive correttamente il rapporto tra energia e materia?",
-    "options": [
-      "Sono esattamente la stessa cosa",
-      "La materia ha massa e volume, l'energia è capacità di compiere lavoro",
-      "Solo la materia può trasformarsi in energia",
-      "L'energia esiste solo nei solidi"
-    ],
-    "correctIndex": 1,
-    "explanation": "La materia occupa spazio e ha massa; l'energia è la capacità di compiere lavoro o causare cambiamenti.",
+    "explanation": "La densità è massa su volume e si misura in chilogrammi per metro cubo.",
     "difficulty": "medium",
     "weight": 2,
-    "tags": [
-      "energia",
-      "materia"
-    ],
-    "subject": "Chimica"
+    "tags": ["densità", "materia"],
+    "subject": "Fisica"
   },
   {
-    "id": "w1-t-1",
+    "id": "f-03",
     "type": "mcq",
-    "question": "Quale materiale è di solito il più leggero per una borraccia?",
-    "options": [
-      "Vetro",
-      "Acciaio",
-      "Plastica",
-      "Ceramica"
-    ],
-    "correctIndex": 2,
-    "explanation": "Le borracce in plastica sono leggere e poco costose.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "materiali",
-      "densita"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w1-t-2",
-    "type": "mcq",
-    "question": "Il legno è un materiale naturale?",
-    "options": [
-      "No, è sintetico",
-      "Sì, proviene direttamente dagli alberi",
-      "Solo se trattato",
-      "Dipende dal colore"
-    ],
+    "question": "Che cosa indica la pendenza di un grafico spazio-tempo di un moto rettilineo uniforme?",
+    "options": ["L'accelerazione", "La velocità", "La forza risultante", "La massa"],
     "correctIndex": 1,
-    "explanation": "Il legno deriva dagli alberi, quindi è un materiale naturale.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "materiali",
-      "naturale"
-    ],
-    "subject": "Tecnica"
+    "explanation": "In un moto uniforme, la pendenza dello spazio in funzione del tempo rappresenta la velocità costante.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["moto", "grafici"],
+    "subject": "Fisica"
   },
   {
-    "id": "w1-t-3",
+    "id": "f-04",
     "type": "mcq",
-    "question": "Quale materiale è il migliore per i cavi elettrici domestici?",
-    "options": [
-      "Rame",
-      "Vetro",
-      "Plastica",
-      "Legno"
-    ],
+    "question": "Quale combinazione rappresenta una grandezza vettoriale?",
+    "options": ["Temperatura", "Tempo", "Velocità", "Massa"],
+    "correctIndex": 2,
+    "explanation": "La velocità possiede modulo, direzione e verso, quindi è una grandezza vettoriale.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["vettori", "moto"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-05",
+    "type": "mcq",
+    "question": "Se raddoppio la massa di un corpo a parità di forza, cosa succede all'accelerazione?",
+    "options": ["Raddoppia", "Rimane uguale", "Si dimezza", "Diventa zero"],
+    "correctIndex": 2,
+    "explanation": "Secondo la seconda legge di Newton, a = F/m: se la massa raddoppia e la forza è la stessa, l'accelerazione si dimezza.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["dinamica", "newton"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-06",
+    "type": "mcq",
+    "question": "Qual è l'energia cinetica di un oggetto?",
+    "options": ["L'energia dovuta alla velocità", "L'energia immagazzinata in una molla compressa", "L'energia termica interna", "L'energia associata alla posizione"],
     "correctIndex": 0,
-    "explanation": "Il rame è un ottimo conduttore di elettricità ed è usato nei cavi.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "conduzione",
-      "materiali"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w1-t-4",
-    "type": "mcq",
-    "question": "Quale materiale duro e trasparente si usa spesso per le finestre?",
-    "options": [
-      "Carta",
-      "Gomma",
-      "Vetro",
-      "Legno"
-    ],
-    "correctIndex": 2,
-    "explanation": "Il vetro è duro e trasparente, ideale per le superfici finestrate.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "materiali",
-      "vetro"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w1-t-5",
-    "type": "mcq",
-    "question": "Quando tocchi plastica e metallo alla stessa temperatura, perché il metallo sembra più freddo?",
-    "options": [
-      "Perché il metallo pesa di più",
-      "Perché il metallo conduce meglio il calore",
-      "Perché la plastica è bagnata",
-      "Perché il metallo è più colorato"
-    ],
-    "correctIndex": 1,
-    "explanation": "Il metallo conduce il calore molto meglio, quindi assorbe rapidamente quello della mano e sembra più freddo.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "temperatura",
-      "conduzione"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w2-f-1",
-    "type": "mcq",
-    "question": "Quale strumento usi per misurare la temperatura?",
-    "options": [
-      "Cronometro",
-      "Termometro",
-      "Bilancia",
-      "Righello"
-    ],
-    "correctIndex": 1,
-    "explanation": "Il termometro misura la temperatura in gradi Celsius o Kelvin.",
+    "explanation": "L'energia cinetica è legata al movimento di un corpo ed è proporzionale alla sua velocità e massa.",
     "difficulty": "easy",
     "weight": 1,
-    "tags": [
-      "temperatura",
-      "strumenti"
-    ],
+    "tags": ["energia", "cinetica"],
     "subject": "Fisica"
   },
   {
-    "id": "w2-f-2",
+    "id": "f-07",
     "type": "mcq",
-    "question": "Perché ripetere una misura può aiutarti?",
-    "options": [
-      "Non cambia nulla",
-      "Serve solo a perdere tempo",
-      "Aiuta a vedere errori e verificare la coerenza",
-      "Serve solo per misurare il tempo"
-    ],
+    "question": "Quale fenomeno spiega perché un cucchiaio di metallo sembra freddo al tatto rispetto a uno di legno?",
+    "options": ["Convezione", "Irraggiamento", "Conduzione", "Evaporazione"],
     "correctIndex": 2,
-    "explanation": "Eseguire più misure permette di scoprire eventuali errori e controllare se i valori sono coerenti.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "errori",
-      "misure"
-    ],
+    "explanation": "Il metallo conduce il calore più velocemente, sottraendolo dalla mano e risultando più freddo.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["calore", "conduzione"],
     "subject": "Fisica"
   },
   {
-    "id": "w2-f-3",
+    "id": "f-08",
     "type": "mcq",
-    "question": "Quale strumento usi per misurare la massa di un oggetto?",
-    "options": [
-      "Termometro",
-      "Bilancia",
-      "Cronometro",
-      "Metro a nastro"
-    ],
-    "correctIndex": 1,
-    "explanation": "Una bilancia, detta anche bilancia di massa o scala, serve a misurare la massa.",
+    "question": "Che cosa accade alla frequenza di un'onda se la lunghezza d'onda diminuisce mantenendo costante la velocità di propagazione?",
+    "options": ["Aumenta", "Diminuisce", "Rimane costante", "Diventa zero"],
+    "correctIndex": 0,
+    "explanation": "v = λ·f: a velocità costante, una lunghezza d'onda minore implica una frequenza maggiore.",
     "difficulty": "medium",
     "weight": 2,
-    "tags": [
-      "massa",
-      "strumenti"
-    ],
+    "tags": ["onde", "frequenza"],
     "subject": "Fisica"
   },
   {
-    "id": "w2-f-4",
+    "id": "f-09",
     "type": "mcq",
-    "question": "Se un righello ha tacche ogni millimetro, qual è la divisione più piccola che puoi leggere?",
-    "options": [
-      "1 centimetro",
-      "1 millimetro",
-      "5 millimetri",
-      "1 metro"
-    ],
+    "question": "Quale unità misura il lavoro nel Sistema Internazionale?",
+    "options": ["Newton", "Joule", "Watt", "Pascal"],
     "correctIndex": 1,
-    "explanation": "La divisione minima leggibile è di 1 mm quando le tacche sono distanti un millimetro.",
+    "explanation": "Il lavoro è energia trasferita e si misura in joule.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["lavoro", "energia"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-10",
+    "type": "mcq",
+    "question": "Quando un corpo galleggia in un liquido, la spinta di Archimede è...",
+    "options": ["Maggiore del peso del corpo", "Uguale al peso del corpo", "Minore del peso del corpo", "Nessuna delle precedenti"],
+    "correctIndex": 1,
+    "explanation": "In equilibrio galleggiante, la spinta idrostatica equilibra il peso.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["fluido", "archimede"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-11",
+    "type": "mcq",
+    "question": "Quale grandezza rappresenta il rapporto tra lavoro compiuto e tempo impiegato?",
+    "options": ["Energia", "Potenza", "Impulso", "Forza"],
+    "correctIndex": 1,
+    "explanation": "La potenza è il lavoro nell'unità di tempo e si misura in watt.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["potenza", "lavoro"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-12",
+    "type": "mcq",
+    "question": "Un raggio di luce passa dall'aria al vetro: come varia la sua velocità?",
+    "options": ["Aumenta", "Rimane uguale", "Diminuisce", "Scompare"],
+    "correctIndex": 2,
+    "explanation": "Nel vetro la luce viaggia più lentamente rispetto all'aria a causa dell'indice di rifrazione maggiore.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["ottica", "rifrazione"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-13",
+    "type": "mcq",
+    "question": "In un circuito elettrico, cosa succede se si collegano più lampadine in serie?",
+    "options": ["La corrente totale aumenta", "Ogni lampadina riceve meno corrente", "La tensione su ciascuna lampadina diminuisce", "Le lampadine si spengono"],
+    "correctIndex": 2,
+    "explanation": "In serie la tensione di alimentazione si divide tra le lampadine, che risultano meno luminose.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["elettricità", "circuiti"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-14",
+    "type": "mcq",
+    "question": "Quale equazione collega differenza di potenziale, corrente e resistenza in un circuito ohmico?",
+    "options": ["P = V · I", "V = I · R", "R = V · I", "I = V · R"],
+    "correctIndex": 1,
+    "explanation": "La legge di Ohm afferma che la tensione ai capi di un conduttore è proporzionale alla corrente che lo attraversa.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["ohm", "circuiti"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-15",
+    "type": "mcq",
+    "question": "Quale delle seguenti grandezze NON influisce sul periodo di un pendolo semplice di piccola ampiezza?",
+    "options": ["La lunghezza del filo", "La massa del bob", "L'accelerazione di gravità", "La temperatura"],
+    "correctIndex": 1,
+    "explanation": "Il periodo dipende da lunghezza e gravità, non dalla massa del bob.",
     "difficulty": "hard",
     "weight": 3,
-    "tags": [
-      "precisione",
-      "strumenti"
-    ],
+    "tags": ["pendolo", "oscillazioni"],
     "subject": "Fisica"
   },
   {
-    "id": "w2-c-1",
+    "id": "f-16",
     "type": "mcq",
-    "question": "Che cosa avviene quando il ghiaccio si scioglie?",
-    "options": [
-      "Da solido a gas",
-      "Da gas a liquido",
-      "Da solido a liquido",
-      "Da liquido a solido"
-    ],
-    "correctIndex": 2,
-    "explanation": "La fusione è il passaggio dallo stato solido a quello liquido.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "cambiamenti",
-      "stati"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w2-c-2",
-    "type": "mcq",
-    "question": "Che cos'è l'evaporazione?",
-    "options": [
-      "Quando un liquido diventa gas",
-      "Quando un gas diventa solido",
-      "Quando un solido diventa gas",
-      "Quando un liquido diventa solido"
-    ],
+    "question": "Un carrello passa da 4 m/s a 10 m/s in 3 s. Qual è l'accelerazione media?",
+    "options": ["2 m/s²", "3 m/s²", "1 m/s²", "6 m/s²"],
     "correctIndex": 0,
-    "explanation": "L'evaporazione è il passaggio di un liquido allo stato di gas, come l'acqua che diventa vapore.",
+    "explanation": "a = Δv / Δt = (10 − 4)/3 ≈ 2 m/s².",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["cinematica", "accelerazione"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-17",
+    "type": "mcq",
+    "question": "Quale fenomeno acustico spiega il cambio di frequenza percepita quando una sirena si avvicina o si allontana?",
+    "options": ["Riflessione", "Risonanza", "Effetto Doppler", "Diffrazione"],
+    "correctIndex": 2,
+    "explanation": "L'effetto Doppler descrive la variazione di frequenza percepita da un osservatore in moto relativo rispetto alla sorgente sonora.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["onde", "suono"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-18",
+    "type": "mcq",
+    "question": "Quale delle seguenti trasformazioni è endotermica?",
+    "options": ["Congelamento dell'acqua", "Evaporazione dell'acqua", "Condensazione del vapore", "Combustione del metano"],
+    "correctIndex": 1,
+    "explanation": "L'evaporazione richiede calore dall'ambiente per avvenire.",
     "difficulty": "easy",
     "weight": 1,
-    "tags": [
-      "evaporazione",
-      "stati"
-    ],
-    "subject": "Chimica"
+    "tags": ["calore", "cambiamento_di_stato"],
+    "subject": "Fisica"
   },
   {
-    "id": "w2-c-3",
+    "id": "f-19",
     "type": "mcq",
-    "question": "In quale stato della materia si trova il vapore acqueo?",
-    "options": [
-      "Solido",
-      "Liquido",
-      "Gas",
-      "Plasma"
-    ],
-    "correctIndex": 2,
-    "explanation": "Il vapore acqueo è acqua allo stato gassoso.",
+    "question": "Per quale motivo un oggetto appare verde?",
+    "options": ["Assorbe la luce verde", "Riflette la luce verde", "Emette luce verde", "Trasmette solo luce blu"],
+    "correctIndex": 1,
+    "explanation": "Un oggetto verde riflette la componente verde della luce incidente e assorbe le altre frequenze.",
     "difficulty": "easy",
     "weight": 1,
-    "tags": [
-      "stati",
-      "gas"
-    ],
-    "subject": "Chimica"
+    "tags": ["ottica", "colore"],
+    "subject": "Fisica"
   },
   {
-    "id": "w2-c-4",
+    "id": "f-20",
     "type": "mcq",
-    "question": "La condensazione si verifica quando:",
-    "options": [
-      "Un gas diventa liquido",
-      "Un liquido diventa solido",
-      "Un solido diventa gas",
-      "Un liquido diventa gas"
-    ],
-    "correctIndex": 0,
-    "explanation": "La condensazione è il passaggio da gas a liquido, come il vapore che si trasforma in goccioline d'acqua.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "condensazione",
-      "stati"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w2-t-1",
-    "type": "mcq",
-    "question": "Il vetro è generalmente più fragile del legno?",
-    "options": [
-      "No, il legno è sempre più fragile",
-      "Sì, il vetro si rompe più facilmente agli urti",
-      "Sono identici",
-      "Dipende dal colore"
-    ],
-    "correctIndex": 1,
-    "explanation": "Il vetro tende a rompersi senza piegarsi molto, quindi è più fragile del legno.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "fragilita",
-      "materiali"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w2-t-2",
-    "type": "mcq",
-    "question": "Quale materiale è un buon conduttore di calore?",
-    "options": [
-      "Plastica",
-      "Legno",
-      "Rame",
-      "Gomma"
-    ],
+    "question": "Quale grandezza fisica si conserva in un urto elastico in linea retta tra due masse isolate?",
+    "options": ["Solo l'energia cinetica", "Solo la quantità di moto", "Energia cinetica e quantità di moto", "Nessuna delle due"],
     "correctIndex": 2,
-    "explanation": "I metalli come il rame conducono il calore in modo molto efficace.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "conduzione-termica",
-      "materiali"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w2-t-3",
-    "type": "mcq",
-    "question": "Se un materiale torna alla forma iniziale dopo essere stato piegato, quale proprietà sta mostrando?",
-    "options": [
-      "Durezza",
-      "Elasticità",
-      "Fragilità",
-      "Densità"
-    ],
-    "correctIndex": 1,
-    "explanation": "L'elasticità è la capacità di deformarsi e poi ritornare alla forma originale.",
+    "explanation": "Negli urti elastici sia l'energia cinetica totale sia la quantità di moto si conservano.",
     "difficulty": "hard",
     "weight": 3,
-    "tags": [
-      "elasticita",
-      "proprieta"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w2-t-4",
-    "type": "mcq",
-    "question": "Un materiale fragile (o tenace?) come si comporta?",
-    "options": [
-      "Si piega molto prima di rompersi",
-      "Si rompe facilmente senza deformarsi molto",
-      "Si allunga come gomma",
-      "Diventa liquido al sole"
-    ],
-    "correctIndex": 1,
-    "explanation": "Un materiale fragile si rompe con poca deformazione, a differenza di uno tenace che resiste di più.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "fragilita",
-      "proprieta"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w3-f-1",
-    "type": "mcq",
-    "question": "Quale strumento usi per misurare il tempo di una gara di corsa?",
-    "options": [
-      "Calcolatrice",
-      "Cronometro",
-      "Bilancia",
-      "Metro a nastro"
-    ],
-    "correctIndex": 1,
-    "explanation": "Il cronometro serve a misurare intervalli di tempo molto precisi, come quelli di una gara.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "tempo",
-      "strumenti"
-    ],
+    "tags": ["urti", "conservazione"],
     "subject": "Fisica"
   },
   {
-    "id": "w3-f-2",
+    "id": "f-21",
     "type": "mcq",
-    "question": "Se percorri 100 m in 20 s, qual è la tua velocità media?",
-    "options": [
-      "2 m/s",
-      "5 m/s",
-      "10 m/s",
-      "20 m/s"
-    ],
-    "correctIndex": 1,
-    "explanation": "La velocità media è spazio diviso tempo: 100 m / 20 s = 5 m/s.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "velocita",
-      "calcoli"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w3-f-3",
-    "type": "mcq",
-    "question": "Perché una barca galleggia sull'acqua?",
-    "options": [
-      "Perché è leggera",
-      "Perché la spinta di Archimede equilibra il peso",
-      "Perché l'acqua è fredda",
-      "Perché ha un motore"
-    ],
-    "correctIndex": 1,
-    "explanation": "La spinta di Archimede esercitata dall'acqua può equilibrare il peso della barca permettendole di galleggiare.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "fluido",
-      "archimede"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w3-f-4",
-    "type": "mcq",
-    "question": "Quale unità di misura usi per la forza nel Sistema Internazionale?",
-    "options": [
-      "Joule",
-      "Pascal",
-      "Newton",
-      "Watt"
-    ],
-    "correctIndex": 2,
-    "explanation": "La forza si misura in newton (N), l'unità del Sistema Internazionale.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "forza",
-      "unita"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w3-f-5",
-    "type": "mcq",
-    "question": "Cosa accade alla temperatura dell'acqua mentre bolle a livello del mare?",
-    "options": [
-      "Sale continuamente",
-      "Scende",
-      "Resta circa costante a 100 °C",
-      "Dipende dal colore della pentola"
-    ],
-    "correctIndex": 2,
-    "explanation": "Durante l'ebollizione a pressione atmosferica la temperatura rimane intorno ai 100 °C finché tutta l'acqua non è evaporata.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "temperatura",
-      "cambiamenti"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w3-f-6",
-    "type": "mcq",
-    "question": "Quando accendi una lampadina, quale trasformazione di energia avviene?",
-    "options": [
-      "Energia chimica in energia elastica",
-      "Energia elettrica in energia luminosa e termica",
-      "Energia termica in energia potenziale",
-      "Energia sonora in energia elettrica"
-    ],
-    "correctIndex": 1,
-    "explanation": "La corrente elettrica viene trasformata in luce e in parte in calore dalla lampadina.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "energia",
-      "trasformazioni"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w3-f-7",
-    "type": "mcq",
-    "question": "Quale grafico è più adatto per mostrare come varia la temperatura durante una giornata?",
-    "options": [
-      "Grafico a barre singole",
-      "Grafico a linee nel tempo",
-      "Grafico a torta",
-      "Diagramma a dispersione senza assi"
-    ],
-    "correctIndex": 1,
-    "explanation": "Un grafico a linee mostra bene l'andamento continuo di una grandezza nel tempo, come la temperatura.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "dati",
-      "visualizzazione"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w3-f-8",
-    "type": "mcq",
-    "question": "Se raddoppi la massa ma lasci invariato il volume, cosa succede alla densità?",
-    "options": [
-      "Resta uguale",
-      "Si dimezza",
-      "Raddoppia",
-      "Diventa zero"
-    ],
-    "correctIndex": 2,
-    "explanation": "La densità è massa diviso volume: raddoppiando la massa a volume costante la densità raddoppia.",
-    "difficulty": "hard",
-    "weight": 3,
-    "tags": [
-      "densita",
-      "proporzioni"
-    ],
-    "subject": "Fisica"
-  },
-  {
-    "id": "w3-c-1",
-    "type": "mcq",
-    "question": "Quale delle seguenti è una miscela omogenea?",
-    "options": [
-      "Sale disciolto in acqua",
-      "Insalata mista",
-      "Sassi e sabbia",
-      "Olio e acqua"
-    ],
+    "question": "Quale condizione permette a una lente convergente di formare un'immagine reale su uno schermo?",
+    "options": ["L'oggetto deve essere oltre il fuoco", "L'oggetto deve essere tra lente e fuoco", "La lente deve essere più piccola dell'oggetto", "La sorgente deve essere monocromatica"],
     "correctIndex": 0,
-    "explanation": "Quando il sale si scioglie nell'acqua forma una soluzione uniforme, quindi omogenea.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "miscele",
-      "soluzioni"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w3-c-2",
-    "type": "mcq",
-    "question": "Quale di questi è un cambiamento fisico e non chimico?",
-    "options": [
-      "Ruggine che si forma sul ferro",
-      "Zucchero che si scioglie nell'acqua",
-      "Legno che brucia",
-      "Latte che caglia"
-    ],
-    "correctIndex": 1,
-    "explanation": "Sciogliere lo zucchero nell'acqua cambia lo stato di miscela ma non la sostanza chimica.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "cambiamenti",
-      "fisico"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w3-c-3",
-    "type": "mcq",
-    "question": "Che cosa rappresenta H2O nella formula dell'acqua?",
-    "options": [
-      "Due molecole di idrogeno e una di ossigeno",
-      "Due atomi di idrogeno e uno di ossigeno in una molecola",
-      "Tre atomi di ossigeno",
-      "Un atomo di idrogeno e due di ossigeno"
-    ],
-    "correctIndex": 1,
-    "explanation": "La formula H2O indica una molecola formata da due atomi di idrogeno e uno di ossigeno.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "molecole",
-      "simboli"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w3-c-4",
-    "type": "mcq",
-    "question": "Qual è il gas più abbondante nell'aria che respiriamo?",
-    "options": [
-      "Ossigeno",
-      "Anidride carbonica",
-      "Azoto",
-      "Idrogeno"
-    ],
-    "correctIndex": 2,
-    "explanation": "Circa il 78% dell'aria è azoto, seguito dall'ossigeno con circa il 21%.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "atmosfera",
-      "gas"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w3-c-5",
-    "type": "mcq",
-    "question": "Cosa succede al volume di un gas se lo comprimi a temperatura costante?",
-    "options": [
-      "Aumenta",
-      "Diminuisce",
-      "Resta uguale",
-      "Diventa liquido all'istante"
-    ],
-    "correctIndex": 1,
-    "explanation": "Secondo la legge di Boyle, a temperatura costante il volume del gas diminuisce quando la pressione aumenta.",
+    "explanation": "Se l'oggetto è oltre la distanza focale, la lente convergente forma un'immagine reale e capovolta.",
     "difficulty": "hard",
     "weight": 3,
-    "tags": [
-      "gas",
-      "pressione"
-    ],
-    "subject": "Chimica"
+    "tags": ["ottica", "lenti"],
+    "subject": "Fisica"
   },
   {
-    "id": "w3-c-6",
+    "id": "f-22",
     "type": "mcq",
-    "question": "Quale metodo useresti per separare sabbia e acqua?",
-    "options": [
-      "Distillazione",
-      "Filtrazione",
-      "Cromatografia",
-      "Elettrolisi"
-    ],
+    "question": "Quale coppia di grandezze è inversamente proporzionale a temperatura costante secondo la legge di Boyle?",
+    "options": ["Pressione e volume", "Pressione e massa", "Volume e temperatura", "Massa e densità"],
+    "correctIndex": 0,
+    "explanation": "Per un gas ideale a temperatura costante, P · V = costante.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["gas", "leggi"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-23",
+    "type": "mcq",
+    "question": "Qual è l'effetto di un trasformatore ideale che dimezza il numero di spire dell'avvolgimento secondario rispetto al primario?",
+    "options": ["Raddoppia la tensione in uscita", "Dimezza la tensione in uscita", "Raddoppia la corrente in uscita", "Dimezza la frequenza in uscita"],
     "correctIndex": 1,
-    "explanation": "La filtrazione permette di trattenere i granelli di sabbia lasciando passare l'acqua.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "separazione",
-      "miscele"
-    ],
-    "subject": "Chimica"
+    "explanation": "Il rapporto di trasformazione della tensione è proporzionale al numero di spire: meno spire al secondario → tensione inferiore.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["elettromagnetismo", "trasformatori"],
+    "subject": "Fisica"
   },
   {
-    "id": "w3-c-7",
+    "id": "f-24",
     "type": "mcq",
-    "question": "Quale proprietà indica quanto facilmente una sostanza prende fuoco?",
-    "options": [
-      "Durezza",
-      "Solubilità",
-      "Infiammabilità",
-      "Densità"
-    ],
+    "question": "Quale delle seguenti grandezze aumenta passando da un'orbita più bassa a una più alta per un satellite?",
+    "options": ["La velocità orbitale", "L'energia potenziale gravitazionale", "La frequenza delle rivoluzioni", "La forza di gravità"],
+    "correctIndex": 1,
+    "explanation": "Salendo di quota aumenta l'energia potenziale gravitazionale, mentre la velocità orbitale diminuisce.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["gravità", "orbite"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-25",
+    "type": "mcq",
+    "question": "Quale delle seguenti situazioni descrive correttamente una corrente alternata domestica?",
+    "options": ["Intensità costante e direzione fissa", "Intensità che cambia segno periodicamente", "Carica accumulata in un condensatore", "Corrente solo quando il circuito è aperto"],
+    "correctIndex": 1,
+    "explanation": "La corrente alternata inverte direzione periodicamente, tipicamente 50 Hz in Italia.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["elettricità", "AC"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-26",
+    "type": "mcq",
+    "question": "Perché nei circuiti domestici si usano interruttori magnetotermici?",
+    "options": ["Per aumentare la tensione", "Per limitare la corrente e prevenire cortocircuiti", "Per trasformare AC in DC", "Per accumulare energia"],
+    "correctIndex": 1,
+    "explanation": "L'interruttore magnetotermico interrompe il circuito in caso di sovracorrente o cortocircuito, proteggendo l'impianto.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["sicurezza", "circuiti"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-27",
+    "type": "mcq",
+    "question": "Quale grandezza determina la capacità di un condensatore piano?",
+    "options": ["La resistenza del materiale", "La distanza tra le armature", "Il numero di spire", "La pressione dell'aria"],
+    "correctIndex": 1,
+    "explanation": "Per un condensatore piano, C è inversamente proporzionale alla distanza tra le piastre e proporzionale all'area e al dielettrico.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["elettrostatica", "capacità"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-28",
+    "type": "mcq",
+    "question": "Quale delle seguenti quantità aumenta con la temperatura in un gas a volume costante?",
+    "options": ["Il numero di molecole", "La massa del gas", "La pressione", "Il volume"],
     "correctIndex": 2,
-    "explanation": "L'infiammabilità descrive la facilità con cui una sostanza si accende e brucia.",
+    "explanation": "Secondo la legge di Gay-Lussac, a volume costante la pressione è proporzionale alla temperatura assoluta.",
     "difficulty": "medium",
     "weight": 2,
-    "tags": [
-      "proprieta",
-      "sicurezza"
-    ],
+    "tags": ["gas", "pressione"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-29",
+    "type": "mcq",
+    "question": "Quando un'onda incontra un ostacolo e cambia direzione mantenendo la stessa lunghezza d'onda, il fenomeno è chiamato...",
+    "options": ["Assorbimento", "Diffrazione", "Rifrazione", "Interferenza"],
+    "correctIndex": 1,
+    "explanation": "La diffrazione è la deviazione di un'onda quando passa attraverso un'apertura o attorno a un ostacolo.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["onde", "diffrazione"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-30",
+    "type": "mcq",
+    "question": "Quale strumento usi per misurare con precisione la tensione in un circuito?",
+    "options": ["Dinamometro", "Amperometro", "Voltmetro", "Barometro"],
+    "correctIndex": 2,
+    "explanation": "Il voltmetro si collega in parallelo per misurare la differenza di potenziale ai capi di un componente.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["strumenti", "circuiti"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-31",
+    "type": "mcq",
+    "question": "Quale grandezza cambia quando la luce passa attraverso un mezzo con indice di rifrazione maggiore?",
+    "options": ["La frequenza", "La velocità", "La carica", "La massa"],
+    "correctIndex": 1,
+    "explanation": "La frequenza resta costante, mentre la velocità diminuisce nel mezzo più denso.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["ottica", "rifrazione"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-32",
+    "type": "mcq",
+    "question": "Quale relazione lega energia potenziale gravitazionale, massa, altezza e gravità?",
+    "options": ["Ep = m · h", "Ep = m · g · h", "Ep = g / h", "Ep = m / g"],
+    "correctIndex": 1,
+    "explanation": "L'energia potenziale gravitazionale è proporzionale a massa, gravità e quota.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["energia", "gravità"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-33",
+    "type": "mcq",
+    "question": "Quale fenomeno si osserva quando due onde si sovrappongono creando zone di massimo e minimo?",
+    "options": ["Polarizzazione", "Assorbimento", "Interferenza", "Risonanza"],
+    "correctIndex": 2,
+    "explanation": "L'interferenza descrive la somma delle onde che porta a rafforzamenti o attenuazioni.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["onde", "interferenza"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-34",
+    "type": "mcq",
+    "question": "Quale concetto spiega perché un pattinatore gira più velocemente quando chiude le braccia?",
+    "options": ["Conservazione dell'energia", "Conservazione della quantità di moto lineare", "Conservazione del momento angolare", "Principio di Bernoulli"],
+    "correctIndex": 2,
+    "explanation": "Riducendo il raggio di rotazione, il momento d'inerzia diminuisce e il momento angolare si conserva aumentando la velocità angolare.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["rotazioni", "momento_angolare"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "f-35",
+    "type": "mcq",
+    "question": "Quale trasformazione di energia avviene in un pannello fotovoltaico?",
+    "options": ["Elettrica in termica", "Chimica in meccanica", "Luminosa in elettrica", "Termica in gravitazionale"],
+    "correctIndex": 2,
+    "explanation": "La cella solare converte direttamente l'energia della luce in energia elettrica.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["energia", "rinnovabili"],
+    "subject": "Fisica"
+  },
+  {
+    "id": "c-01",
+    "type": "mcq",
+    "question": "Quale particella subatomica determina il numero atomico di un elemento?",
+    "options": ["Neutrone", "Protone", "Elettrone", "Bosone"],
+    "correctIndex": 1,
+    "explanation": "Il numero atomico corrisponde al numero di protoni nel nucleo.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["atomo", "protoni"],
     "subject": "Chimica"
   },
   {
-    "id": "w3-c-8",
+    "id": "c-02",
     "type": "mcq",
-    "question": "Quando un liquido diventa solido, come chiami questo cambiamento di stato?",
-    "options": [
-      "Evaporazione",
-      "Sublimazione",
-      "Condensazione",
-      "Solidificazione"
-    ],
+    "question": "Quale legame si forma tra atomi che condividono coppie di elettroni?",
+    "options": ["Ionica", "Metallica", "Covalente", "Idrogeno"],
+    "correctIndex": 2,
+    "explanation": "Nel legame covalente gli atomi condividono una o più coppie di elettroni di valenza.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["legami", "covalente"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-03",
+    "type": "mcq",
+    "question": "Quale proprietà caratterizza le soluzioni acide in acqua?",
+    "options": ["pH maggiore di 7", "pH minore di 7", "Neutralità", "Assenza di ioni"],
+    "correctIndex": 1,
+    "explanation": "Le soluzioni acide hanno pH inferiore a 7 per la presenza di ioni H+.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["acidi", "pH"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-04",
+    "type": "mcq",
+    "question": "Quale elemento si trova nella seconda riga e nel gruppo 17 della tavola periodica?",
+    "options": ["Cloro", "Fluoro", "Bromo", "Iodio"],
+    "correctIndex": 1,
+    "explanation": "Il fluoro è un alogeno del secondo periodo.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["tavola_periodica", "alogeni"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-05",
+    "type": "mcq",
+    "question": "Come varia la solubilità di un solido in un liquido al crescere della temperatura (di solito)?",
+    "options": ["Aumenta", "Diminuisce", "Rimane costante", "Diventa nulla"],
+    "correctIndex": 0,
+    "explanation": "Per molti solidi, la solubilità cresce con la temperatura perché aumenta l'energia disponibile per dissolvere il reticolo.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["solubilità", "soluzioni"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-06",
+    "type": "mcq",
+    "question": "Che cosa rappresenta la massa molare di una sostanza?",
+    "options": ["La massa di un singolo atomo", "La massa di 1 mole della sostanza", "La massa di un elettrone", "La massa di 1 litro di gas"],
+    "correctIndex": 1,
+    "explanation": "La massa molare è la massa di Avogadro di particelle, espressa in g/mol.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["moli", "massa_molare"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-07",
+    "type": "mcq",
+    "question": "Quale reazione descrive la combustione del metano in eccesso di ossigeno?",
+    "options": ["CH4 + O2 → CO + 2H2", "CH4 + 2O2 → CO2 + 2H2O", "CH4 + O2 → C + 2H2O", "CH4 + H2O → CO + 3H2"],
+    "correctIndex": 1,
+    "explanation": "La combustione completa del metano produce anidride carbonica e acqua.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["combustione", "reazioni"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-08",
+    "type": "mcq",
+    "question": "Quale grandezza rimane costante in una reazione bilanciata?",
+    "options": ["Il numero di moli dei reagenti", "Il numero totale di atomi", "La velocità di reazione", "La massa molare dei prodotti"],
+    "correctIndex": 1,
+    "explanation": "Il principio di conservazione della massa implica lo stesso numero di atomi di ogni elemento nei reagenti e nei prodotti.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["bilanciamento", "conservazione"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-09",
+    "type": "mcq",
+    "question": "Quale delle seguenti sostanze è un sale?",
+    "options": ["HCl", "NaCl", "CH4", "NH3"],
+    "correctIndex": 1,
+    "explanation": "Il cloruro di sodio è un sale formato da ioni Na+ e Cl-.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["sali", "ioni"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-10",
+    "type": "mcq",
+    "question": "Quale modello atomico introdusse i livelli energetici quantizzati per gli elettroni dell'idrogeno?",
+    "options": ["Modello a panettone di Thomson", "Modello nucleare di Rutherford", "Modello di Bohr", "Modello a onde di De Broglie"],
+    "correctIndex": 2,
+    "explanation": "Bohr introdusse orbite quantizzate per spiegare lo spettro dell'idrogeno.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["modelli_atomici", "spettri"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-11",
+    "type": "mcq",
+    "question": "Quale proprietà descrive la capacità di un metallo di essere ridotto in fili sottili?",
+    "options": ["Durezza", "Duttilità", "Malleabilità", "Fragilità"],
+    "correctIndex": 1,
+    "explanation": "La duttilità è la capacità di essere deformato in fili senza rompersi.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["metalli", "proprietà"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-12",
+    "type": "mcq",
+    "question": "Quale forza tiene uniti gli ioni in un reticolo cristallino di un sale?",
+    "options": ["Forza di van der Waals", "Legame idrogeno", "Interazione elettrostatica", "Legame covalente"],
+    "correctIndex": 2,
+    "explanation": "Nei sali gli ioni positivi e negativi sono attratti da forze elettrostatiche.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["ioni", "reticoli"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-13",
+    "type": "mcq",
+    "question": "Quale gas è responsabile dell'effetto di effervescenza quando si apre una bibita gassata?",
+    "options": ["Ossigeno", "Azoto", "Anidride carbonica", "Idrogeno"],
+    "correctIndex": 2,
+    "explanation": "L'anidride carbonica disciolta sotto pressione esce formando bollicine quando la pressione si riduce.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["gas", "soluzioni"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-14",
+    "type": "mcq",
+    "question": "Quale processo separa un miscuglio omogeneo sfruttando il diverso punto di ebollizione dei componenti?",
+    "options": ["Filtrazione", "Decantazione", "Distillazione", "Centrifugazione"],
+    "correctIndex": 2,
+    "explanation": "La distillazione permette di separare liquidi con punti di ebollizione differenti.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["separazioni", "distillazione"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-15",
+    "type": "mcq",
+    "question": "Quale acido è maggiormente responsabile delle piogge acide?",
+    "options": ["Acido solforico", "Acido cloridrico", "Acido acetico", "Acido citrico"],
+    "correctIndex": 0,
+    "explanation": "La combustione di combustibili fossili rilascia SO2 che si ossida e forma acido solforico.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["ambiente", "inquinamento"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-16",
+    "type": "mcq",
+    "question": "Quale affermazione descrive correttamente una reazione endotermica?",
+    "options": ["Rilascia calore nell'ambiente", "Assorbe calore dall'ambiente", "Non scambia energia", "Produce luce ma non calore"],
+    "correctIndex": 1,
+    "explanation": "Le reazioni endotermiche richiedono energia termica dall'esterno per procedere.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["termica", "reazioni"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-17",
+    "type": "mcq",
+    "question": "Come si chiama la minima quantità di energia necessaria perché una reazione chimica avvenga?",
+    "options": ["Energia di attivazione", "Entalpia", "Entropia", "Potenziale elettrico"],
+    "correctIndex": 0,
+    "explanation": "L'energia di attivazione è la barriera energetica che i reagenti devono superare per reagire.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["cinematica_chimica", "energia"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-18",
+    "type": "mcq",
+    "question": "Quale tecnica permette di identificare le sostanze in base al tempo di migrazione su un supporto?",
+    "options": ["Distillazione", "Cromatografia", "Cristallizzazione", "Sedimentazione"],
+    "correctIndex": 1,
+    "explanation": "La cromatografia separa e identifica i componenti sfruttando diverse affinità per la fase mobile e stazionaria.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["analisi", "cromatografia"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-19",
+    "type": "mcq",
+    "question": "Quale famiglia della tavola periodica contiene elementi con configurazione elettronica s2p5?",
+    "options": ["Metalli alcalini", "Gas nobili", "Alogeni", "Metalli di transizione"],
+    "correctIndex": 2,
+    "explanation": "Gli alogeni hanno 7 elettroni di valenza, configurazione ns2 np5.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["tavola_periodica", "configurazione"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-20",
+    "type": "mcq",
+    "question": "Quale proprietà distingue un ossido basico da un ossido acido?",
+    "options": ["L'aspetto cristallino", "La reazione con l'acqua", "La conducibilità elettrica", "La massa atomica"],
+    "correctIndex": 1,
+    "explanation": "Gli ossidi basici formano idrossidi con l'acqua, gli ossidi acidi formano acidi.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["ossidi", "classificazione"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-21",
+    "type": "mcq",
+    "question": "Quale soluzione è tampone?",
+    "options": ["Acqua distillata", "Soluzione di NaCl", "Soluzione di acido acetico e acetato di sodio", "Soluzione di zucchero"],
+    "correctIndex": 2,
+    "explanation": "Un tampone contiene un acido debole e la sua base coniugata per resistere alle variazioni di pH.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["tamponi", "equilibri"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-22",
+    "type": "mcq",
+    "question": "Quale caratteristica accomuna gli elementi di transizione?",
+    "options": ["Sono tutti gas a temperatura ambiente", "Presentano orbitali d parzialmente riempiti", "Non conducono elettricità", "Hanno sempre valenza 1"],
+    "correctIndex": 1,
+    "explanation": "Gli elementi di transizione hanno elettroni negli orbitali d, spesso responsabili di colori e stati di ossidazione multipli.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["tavola_periodica", "transizione"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-23",
+    "type": "mcq",
+    "question": "Quale parametro aumenta quando la concentrazione dei reagenti in soluzione cresce, in generale?",
+    "options": ["Energia di attivazione", "Velocità di reazione", "Numero di moli totali", "Massa molare"],
+    "correctIndex": 1,
+    "explanation": "A concentrazioni maggiori, aumentano gli urti efficaci e la reazione procede più velocemente.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["velocità", "reazioni"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-24",
+    "type": "mcq",
+    "question": "Quale grandezza si calcola con la formula m/V?",
+    "options": ["Pressione", "Densità", "Energia", "Concentrazione"],
+    "correctIndex": 1,
+    "explanation": "La densità è il rapporto tra massa e volume.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["densità", "misure"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-25",
+    "type": "mcq",
+    "question": "Qual è il ruolo di un catalizzatore in una reazione chimica?",
+    "options": ["Aumenta la resa finale", "Riduce l'energia di attivazione", "Cambia gli reagenti iniziali", "Blocca i prodotti secondari"],
+    "correctIndex": 1,
+    "explanation": "Il catalizzatore abbassa l'energia di attivazione, accelerando la reazione senza consumarsi.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["catalisi", "cinematica_chimica"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-26",
+    "type": "mcq",
+    "question": "Quale gas è rilasciato quando un metallo reattivo viene posto in un acido diluito?",
+    "options": ["Azoto", "Ossigeno", "Idrogeno", "Anidride solforosa"],
+    "correctIndex": 2,
+    "explanation": "Molti metalli spostano l'idrogeno dall'acido, liberando gas H2.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["reazioni", "metalli"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-27",
+    "type": "mcq",
+    "question": "Quale affermazione descrive meglio una soluzione satura?",
+    "options": ["Contiene più soluto di quanto possa sciogliere", "Contiene la massima quantità di soluto sciolto a quella temperatura", "È composta solo da soluto", "È sempre solida"],
+    "correctIndex": 1,
+    "explanation": "In una soluzione satura non si scioglie ulteriore soluto senza modificare le condizioni.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["soluzioni", "solubilità"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-28",
+    "type": "mcq",
+    "question": "Come varia la pressione di un gas se il volume viene dimezzato a temperatura costante?",
+    "options": ["Si dimezza", "Raddoppia", "Rimane uguale", "Diventa zero"],
+    "correctIndex": 1,
+    "explanation": "Per Boyle, P e V sono inversamente proporzionali a temperatura costante.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["gas", "pressione"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-29",
+    "type": "mcq",
+    "question": "Quale indicatore cambia colore dal rosso al blu quando il pH passa da acido a basico?",
+    "options": ["Fenolftaleina", "Tornasole", "Rosso metile", "Blu di bromotimolo"],
+    "correctIndex": 1,
+    "explanation": "La cartina tornasole diventa blu in ambiente basico.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["indicatori", "pH"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "c-30",
+    "type": "mcq",
+    "question": "Quale tecnica analitica misura l'assorbimento di luce di una soluzione per determinarne la concentrazione?",
+    "options": ["Titolazione", "Spettrofotometria", "Filtrazione", "Evaporazione"],
+    "correctIndex": 1,
+    "explanation": "La spettrofotometria utilizza la legge di Lambert-Beer per correlare assorbanza e concentrazione.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["analisi", "spettrofotometria"],
+    "subject": "Chimica"
+  },
+  {
+    "id": "t-01",
+    "type": "mcq",
+    "question": "Quale materiale è scelto per le travi di un ponte grazie al buon rapporto resistenza/peso?",
+    "options": ["Piombo", "Acciaio", "Piastrelle di ceramica", "Gesso"],
+    "correctIndex": 1,
+    "explanation": "L'acciaio combina alta resistenza e duttilità, adatto a strutture portanti.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["materiali", "strutture"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-02",
+    "type": "mcq",
+    "question": "Quale componente meccanico trasmette il moto rotatorio tra assi paralleli?",
+    "options": ["Cinghia", "Vite", "Molla", "Cerniera"],
+    "correctIndex": 0,
+    "explanation": "Le trasmissioni a cinghia collegano pulegge su assi paralleli trasferendo la rotazione.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["meccanismi", "trasmissioni"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-03",
+    "type": "mcq",
+    "question": "Quale materiale plastico è comunemente riciclabile e indicato con il codice PET?",
+    "options": ["Polietilene tereftalato", "Policloruro di vinile", "Polistirene", "Nylon"],
+    "correctIndex": 0,
+    "explanation": "Il PET è usato per bottiglie e fibre, facilmente riciclabile.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["riciclo", "polimeri"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-04",
+    "type": "mcq",
+    "question": "Quale dispositivo elettronico converte corrente alternata in continua?",
+    "options": ["Trasformatore", "Raddrizzatore a diodi", "Condensatore", "Reostato"],
+    "correctIndex": 1,
+    "explanation": "Il ponte di diodi raddrizza l'onda AC ottenendo un segnale unidirezionale.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["elettronica", "alimentazione"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-05",
+    "type": "mcq",
+    "question": "Quale elemento di una catena cinematica può variare il rapporto di trasmissione in modo continuo?",
+    "options": ["Ingranaggio fisso", "Frizione a dischi", "Variatore a pulegge coniche", "Cuscinetto a sfere"],
+    "correctIndex": 2,
+    "explanation": "Il variatore a pulegge coniche (CVT) modifica il rapporto variando il raggio di contatto della cinghia.",
+    "difficulty": "hard",
+    "weight": 3,
+    "tags": ["meccanica", "trasmissioni"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-06",
+    "type": "mcq",
+    "question": "Quale simbolo elettrico rappresenta un interruttore nel circuito?",
+    "options": ["Una linea spezzata con due punti", "Un triangolo con linea", "Due linee parallele", "Una bobina"],
+    "correctIndex": 0,
+    "explanation": "Lo schema dell'interruttore mostra un contatto apribile fra due terminali.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["schemi", "elettricità"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-07",
+    "type": "mcq",
+    "question": "Quale protocollo wireless è più indicato per collegare sensori domestici a bassa potenza?",
+    "options": ["Bluetooth Low Energy", "HDMI", "USB-C", "Ethernet"],
+    "correctIndex": 0,
+    "explanation": "BLE è progettato per comunicazioni a corto raggio con consumi ridotti, adatto ai sensori IoT domestici.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["reti", "domotica"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-08",
+    "type": "mcq",
+    "question": "Quale tecnica di produzione riduce gli scarti costruendo il pezzo per strati?",
+    "options": ["Tornitura", "Fresatura", "Stampa 3D", "Piegatura"],
+    "correctIndex": 2,
+    "explanation": "La manifattura additiva costruisce l'oggetto strato dopo strato, minimizzando sprechi.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["produzione", "innovazione"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-09",
+    "type": "mcq",
+    "question": "Quale dispositivo protegge un circuito da sovracorrenti fondendosi?",
+    "options": ["Interruttore differenziale", "Fusibile", "Induttore", "Relè"],
+    "correctIndex": 1,
+    "explanation": "Il fusibile interrompe il circuito quando la corrente supera il valore di sicurezza.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["sicurezza", "circuiti"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-10",
+    "type": "mcq",
+    "question": "Quale tipo di ponte utilizza cavi in acciaio tesi per sostenere il piano stradale?",
+    "options": ["Ponte ad arco", "Ponte a travata", "Ponte sospeso", "Ponte a traliccio"],
+    "correctIndex": 2,
+    "explanation": "Nei ponti sospesi i cavi principali in acciaio portano il carico verso le torri e gli ancoraggi.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["strutture", "ponti"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-11",
+    "type": "mcq",
+    "question": "Quale metodo di illuminazione è più efficiente dal punto di vista energetico?",
+    "options": ["Lampada a incandescenza", "Lampada alogena", "Lampada fluorescente", "Lampada LED"],
     "correctIndex": 3,
-    "explanation": "Il passaggio da liquido a solido è la solidificazione (o congelamento).",
+    "explanation": "I LED hanno alta efficienza luminosa e lunga durata rispetto alle altre tecnologie.",
     "difficulty": "easy",
     "weight": 1,
-    "tags": [
-      "stati",
-      "cambiamenti"
-    ],
-    "subject": "Chimica"
-  },
-  {
-    "id": "w3-t-1",
-    "type": "mcq",
-    "question": "Quale materiale sceglieresti per isolare termicamente una casa?",
-    "options": [
-      "Alluminio lucido",
-      "Vetro semplice",
-      "Lana di vetro",
-      "Acciaio inox"
-    ],
-    "correctIndex": 2,
-    "explanation": "La lana di vetro è un materiale isolante che riduce la dispersione di calore.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "isolamento",
-      "materiali"
-    ],
+    "tags": ["energia", "illuminazione"],
     "subject": "Tecnica"
   },
   {
-    "id": "w3-t-2",
+    "id": "t-12",
     "type": "mcq",
-    "question": "Quale utensile usi per tagliare con precisione una tavola di legno?",
-    "options": [
-      "Martello",
-      "Seghetto a mano",
-      "Cacciavite",
-      "Tenaglia"
-    ],
+    "question": "Quale software è tipicamente usato per modellazione 3D in ambito scolastico?",
+    "options": ["Word", "Scratch", "Tinkercad", "Audacity"],
+    "correctIndex": 2,
+    "explanation": "Tinkercad è un ambiente semplice per creare modelli 3D destinati anche alla stampa.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["digitale", "modellazione"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-13",
+    "type": "mcq",
+    "question": "Quale meccanismo converte un moto rotatorio in moto alternato rettilineo?",
+    "options": ["Cuscinetto", "Biella-manovella", "Cinghia dentata", "Giunto cardanico"],
     "correctIndex": 1,
-    "explanation": "Un seghetto a mano permette tagli controllati e precisi nel legno.",
-    "difficulty": "easy",
-    "weight": 1,
-    "tags": [
-      "attrezzi",
-      "lavorazione"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w3-t-3",
-    "type": "mcq",
-    "question": "Il simbolo di riciclo con il numero 1 su una bottiglia indica che è fatta di:",
-    "options": [
-      "Carta",
-      "Vetro",
-      "PET (polietilene tereftalato)",
-      "Legno pressato"
-    ],
-    "correctIndex": 2,
-    "explanation": "Il codice 1 identifica il PET, una plastica comune e riciclabile usata per le bottiglie.",
+    "explanation": "La biella-manovella trasforma la rotazione in un'oscillazione lineare, come nei motori a pistoni.",
     "difficulty": "medium",
     "weight": 2,
-    "tags": [
-      "riciclo",
-      "materiali"
-    ],
+    "tags": ["meccanica", "conversione_moto"],
     "subject": "Tecnica"
   },
   {
-    "id": "w3-t-4",
+    "id": "t-14",
     "type": "mcq",
-    "question": "Quale tra questi materiali è magnetico?",
-    "options": [
-      "Ferro",
-      "Alluminio",
-      "Plastica",
-      "Vetro"
-    ],
-    "correctIndex": 0,
-    "explanation": "Il ferro è magnetico e viene attratto da una calamita, a differenza di plastica e vetro.",
+    "question": "Quale unità misura la resistenza elettrica?",
+    "options": ["Volt", "Ampere", "Ohm", "Watt"],
+    "correctIndex": 2,
+    "explanation": "La resistenza si misura in ohm e indica l'opposizione al passaggio di corrente.",
     "difficulty": "easy",
     "weight": 1,
-    "tags": [
-      "magnetismo",
-      "materiali"
-    ],
+    "tags": ["elettricità", "unità"],
     "subject": "Tecnica"
   },
   {
-    "id": "w3-t-5",
+    "id": "t-15",
     "type": "mcq",
-    "question": "Perché l'alluminio è spesso scelto per i telai delle biciclette?",
-    "options": [
-      "Perché è magnetico",
-      "Perché è molto pesante",
-      "Perché è leggero e resiste alla corrosione",
-      "Perché cambia colore al sole"
-    ],
-    "correctIndex": 2,
-    "explanation": "L'alluminio è leggero, rigido e non arrugginisce facilmente, qualità utili nei telai.",
-    "difficulty": "medium",
-    "weight": 2,
-    "tags": [
-      "materiali",
-      "proprieta"
-    ],
-    "subject": "Tecnica"
-  },
-  {
-    "id": "w3-t-6",
-    "type": "mcq",
-    "question": "Quale tecnica permette di unire due pezzi di metallo in modo permanente?",
-    "options": [
-      "Avvitatura",
-      "Saldatura",
-      "Incollaggio con nastro",
-      "Cucitura"
-    ],
+    "question": "Quale sistema di archiviazione è più indicato per salvare backup a lungo termine senza parti meccaniche?",
+    "options": ["Hard disk magnetico", "SSD", "CD riscrivibile", "Nastro magnetico"],
     "correctIndex": 1,
-    "explanation": "La saldatura fonde i bordi dei pezzi metallici creando un'unione permanente.",
+    "explanation": "Gli SSD non hanno parti in movimento e offrono buona resistenza agli urti e velocità elevate.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["informatica", "storage"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-16",
+    "type": "mcq",
+    "question": "Quale documento tecnico mostra le viste ortogonali di un oggetto?",
+    "options": ["Distinta base", "Diagramma di Gantt", "Disegno quotato", "Manuale utente"],
+    "correctIndex": 2,
+    "explanation": "Il disegno quotato rappresenta le viste (pianta, fronte, lato) con quote dimensionali.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["disegno", "progetto"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-17",
+    "type": "mcq",
+    "question": "Quale procedura rende un circuito più sicuro contro le dispersioni verso terra?",
+    "options": ["Aumento della tensione", "Messa a terra", "Riduzione del diametro dei cavi", "Collegamento in serie di tutte le prese"],
+    "correctIndex": 1,
+    "explanation": "La messa a terra convoglia eventuali correnti di guasto in un percorso sicuro, attivando le protezioni.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["sicurezza", "impianti"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-18",
+    "type": "mcq",
+    "question": "Quale sensore permette di misurare la temperatura in un microcontrollore?",
+    "options": ["Fotodiodo", "Termistore", "Potentiometro", "Encoder ottico"],
+    "correctIndex": 1,
+    "explanation": "Il termistore varia la propria resistenza con la temperatura, ed è leggibile da un microcontrollore.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["sensoristica", "iot"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-19",
+    "type": "mcq",
+    "question": "Quale pratica riduce il consumo energetico di un edificio?",
+    "options": ["Finestre con vetro singolo", "Isolamento termico a cappotto", "Illuminazione a incandescenza", "Pareti non isolate"],
+    "correctIndex": 1,
+    "explanation": "Un buon isolamento riduce le dispersioni termiche migliorando l'efficienza energetica.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["edilizia", "energia"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-20",
+    "type": "mcq",
+    "question": "Quale processo industriale produce acciaio a partire da ghisa liquida?",
+    "options": ["Saldatura", "Convertitore ad ossigeno", "Stampaggio a freddo", "Estrusione"],
+    "correctIndex": 1,
+    "explanation": "Nel convertitore si insuffla ossigeno per abbattere il contenuto di carbonio della ghisa e ottenere acciaio.",
     "difficulty": "hard",
     "weight": 3,
-    "tags": [
-      "lavorazione",
-      "giunzioni"
-    ],
+    "tags": ["metallurgia", "processi"],
     "subject": "Tecnica"
   },
   {
-    "id": "w3-t-7",
+    "id": "t-21",
     "type": "mcq",
-    "question": "Quale caratteristica rende il cartone ondulato adatto agli imballaggi?",
-    "options": [
-      "È trasparente",
-      "È pesantissimo",
-      "Assorbe gli urti pur rimanendo leggero",
-      "Conduce elettricità"
-    ],
-    "correctIndex": 2,
-    "explanation": "La struttura ondulata del cartone ammortizza gli urti mantenendo bassa la massa dell'imballo.",
+    "question": "Quale effetto produce un ingranaggio conduttore più grande rispetto a quello condotto?",
+    "options": ["Aumenta la velocità del condotto", "Diminuisce la velocità del condotto", "Non cambia la coppia", "Blocca il movimento"],
+    "correctIndex": 1,
+    "explanation": "Un ingranaggio conduttore più grande riduce i giri dell'ingranaggio condotto aumentando la coppia.",
     "difficulty": "medium",
     "weight": 2,
-    "tags": [
-      "imballaggi",
-      "materiali"
-    ],
+    "tags": ["ingranaggi", "meccanica"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-22",
+    "type": "mcq",
+    "question": "Quale standard descrive una rete locale cablata a 1 Gbit/s?",
+    "options": ["Wi-Fi 4", "Bluetooth 5", "Ethernet Gigabit (1000BASE-T)", "Zigbee"],
+    "correctIndex": 2,
+    "explanation": "Lo standard 1000BASE-T definisce Ethernet Gigabit su cavo di rame.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["reti", "standard"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-23",
+    "type": "mcq",
+    "question": "Quale documento elenca materiali e componenti necessari per un progetto tecnico?",
+    "options": ["Distinta base", "Relazione di collaudo", "Manuale utente", "Certificato di garanzia"],
+    "correctIndex": 0,
+    "explanation": "La distinta base riporta codici, quantità e descrizione dei materiali per la realizzazione.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["progetto", "documentazione"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-24",
+    "type": "mcq",
+    "question": "Quale fattore rende il rame ideale per i cavi elettrici?",
+    "options": ["Bassa densità", "Alta resistenza elettrica", "Elevata conducibilità", "Scarso costo"],
+    "correctIndex": 2,
+    "explanation": "Il rame ha ottima conducibilità elettrica e termica, riducendo le perdite di energia.",
+    "difficulty": "easy",
+    "weight": 1,
+    "tags": ["materiali", "elettricità"],
+    "subject": "Tecnica"
+  },
+  {
+    "id": "t-25",
+    "type": "mcq",
+    "question": "Quale sensore rileva la presenza di movimento usando microonde o ultrasuoni?",
+    "options": ["Sensore PIR", "Sensore a contatto", "Sensore di prossimità attivo", "Termocoppia"],
+    "correctIndex": 2,
+    "explanation": "I sensori di prossimità attivi emettono un'onda e rilevano il rimbalzo per percepire il movimento.",
+    "difficulty": "medium",
+    "weight": 2,
+    "tags": ["sensoristica", "domotica"],
     "subject": "Tecnica"
   }
 ]
