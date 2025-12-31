@@ -12,6 +12,8 @@ const LEVELS = [
   { min: 8, max: 10.01, label: 'Esperto' },
 ];
 
+const NON_REPEAT_WINDOW = 60; // minimo 30 domande diverse prima di riproporne una
+
 let questionsData = [];
 let grades = loadGrades();
 let historyLog = loadHistory();
@@ -113,7 +115,7 @@ function getLastCorrectEntries(limit = 20) {
   return historyLog.filter((h) => h.wasCorrect).sort((a, b) => b.timestamp - a.timestamp).slice(0, limit);
 }
 
-function getRecentQuestionIds(limit = 50) {
+function getRecentQuestionIds(limit = NON_REPEAT_WINDOW) {
   const seen = new Set();
   const ids = [];
   for (let i = historyLog.length - 1; i >= 0 && ids.length < limit; i -= 1) {
@@ -470,7 +472,7 @@ function chooseSubjectForMixed(pool) {
 function selectQuestion(questions) {
   const now = Date.now();
   const last20Correct = new Set(getLastCorrectEntries(20).map((h) => h.questionId));
-  const recentSet = new Set(getRecentQuestionIds(50));
+  const recentSet = new Set(getRecentQuestionIds(NON_REPEAT_WINDOW));
   const eligible = questions.filter((q) => {
     if (last20Correct.has(q.id)) return false;
     if (recentSet.has(q.id)) return false;
